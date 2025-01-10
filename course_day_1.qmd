@@ -21,13 +21,78 @@ Motivation
 # Goal of today
 
 ```{.python}
+// This script exports metadata information to a JSON file.
+// The metadata includes the author, date, and length of the data.
+// The output is saved to 'data/data_info.json'.
 import json
+cell_count = [1,1,4,5,2]
+cell_count.sort()
+list_length = len(cell_count)
 output_file = 'data/data_info.json'
 output_data = {
     'author': 'Doe, John',
     'date': '2025-01-10',
-    'length': 5
+    'length': list_length
 }
 with open(output_file, 'w') as f:
     json.dump(output_data, f)
 ```
+
+::: {.notes}
+This is an example to showcase what we will achieve today.
+:::
+
+# Basic usage
+
+# Environments
+
+::: {.absolute top=0 right=0}
+![](https://images.stockcake.com/public/c/2/a/c2a89e7f-1460-40a8-9c2a-5b809111d0cd_large/organized-tool-drawer-stockcake.jpg){width="200px"}
+<br>
+<small>Photo by <a href="https://stockcake.com/i/organized-tool-drawer_1348100_881763">Stockcake</a></small>
+:::
+
+- Only bring the tools you need
+    - less bloated
+    - few conflicts
+- Only project specific packages
+
+## Make environment
+
+- can be done via console
+
+::: {.fragment}
+``` {.bash}
+python3 -m venv .venv
+```
+:::
+
+- make one in VS Code
+    - `CTRL + SHIFT + P` → type: *env*
+    - select: *Create Environment*
+
+# Install packages
+
+# Import
+
+When do you have to import?
+
+- only some functions are available by default
+
+## Packages
+
+## Modules
+
+# Programming building blocks
+
+## Variables
+
+## (data-) types
+
+## Simple functions
+
+## Methods
+
+# Documentation
+
+# Homework
