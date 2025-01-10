@@ -1,0 +1,33 @@
+---
+title: "Introduction to Python"
+author: "Verjinia Metodieva and Daniel Parthier"
+format:
+    revealjs:
+        incremental: true 
+        theme: night
+    pdf: default
+---
+
+
+# Why would you code?
+
+Motivation
+
+- Saving time
+- Reproducible workflow
+- Flexibility
+- Unlimited creativity
+
+# Goal of today
+
+```{.python}
+import json
+output_file = 'data/data_info.json'
+output_data = {
+    'author': 'Doe, John',
+    'date': '2025-01-10',
+    'length': 5
+}
+with open(output_file, 'w') as f:
+    json.dump(output_data, f)
+```
