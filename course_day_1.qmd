@@ -1,14 +1,18 @@
 ---
 title: "Introduction to Python"
 author: "Verjinia Metodieva and Daniel Parthier"
+date: 2025-01-21
 format:
     revealjs:
         incremental: true 
         theme: night
+        code-fold: true
     pdf: default
+execute:
+    eval: true
 ---
 
-
+<!--some high contrast colour choices : #DEC62F, #DE2F99, #2FD2DE-->
 # Why would you code?
 
 Motivation
@@ -44,6 +48,9 @@ This is an example to showcase what we will achieve today.
 
 # Basic usage
 
+- Most of the time with a GUI (graphical user interface)
+- Can be run from the terminal/console as well
+
 # Environments
 
 ::: {.absolute top=0 right=0}
@@ -71,6 +78,19 @@ python3 -m venv .venv
     - `CTRL + SHIFT + P` → type: *env*
     - select: *Create Environment*
 
+## Start environment
+
+**Windows**
+``` {.bash}
+.venv\Scripts\activate
+```
+
+**Unix/macOS**
+``` {.bash}
+source .venv/bin/activate
+```
+- VS Code will start the environment for you
+
 # Install packages
 
 # Import
@@ -78,6 +98,34 @@ python3 -m venv .venv
 When do you have to import?
 
 - only some functions are available by default
+
+::: {.fragment}
+Let's open the 'math' drawer!
+:::
+
+::: {.fragment}
+``` {.python}
+import math
+```
+:::
+
+::: {.fragment}
+This will open our math *toolbox* drawer
+:::
+
+- Pull out a tool to use it with the dot notation: <span style="color:#DEC62F;font-family:monospace">toolbox</span><span style="color:#DE2F99;font-family:monospace">.</span><span style="color:#2FD2DE;font-family:monospace">tool</span>
+
+::: {.fragment}
+``` {.python}
+#| output: true
+2+2
+math.pi
+```
+:::
+
+::: {.notes}
+Importing a package only has to happen once. By using `import package` everything from the package will be made available.
+:::
 
 ## Packages
 
