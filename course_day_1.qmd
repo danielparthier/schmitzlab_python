@@ -7,12 +7,12 @@ format:
         incremental: true 
         theme: night
         drop:
-            shortcut: ","
             engine: pyodide
     pdf: default
 execute:
     eval: true
     echo: true
+highlight-style: dracula
 revealjs-plugins:
   - drop
 ---
@@ -142,6 +142,37 @@ math.sin(1)
 
 ::: {.notes}
 Importing a package only has to happen once. By using `import package` everything from the package will be made available.
+:::
+
+## Import (shorter names)
+
+- Some packages can have long names (ie. `matplotlib`)
+- Assign a new name during the import
+- Also a part of a package can be loaded
+
+::: {.fragment}
+``` {python}
+#| eval: false
+import matplotlib.pyplot as plt
+plt.plot([1,2,3])
+```
+:::
+
+::: {.notes}
+Generally abbreviating longer packages will make writing, but also reading code easier. At the same time you should check whether your abbreviation makes sense and is understandable for others. There are also common ways to abbreviate well known packages. Some other examples would be `numpy` as `np`, `pandas` as `pd`.
+:::
+
+## Import (direct)
+
+Load only parts of the package:
+
+``` {python }
+from math import sin
+sin(1)
+```
+
+::: {.notes}
+This way of import comes in handy if you just need a function or part of a large package. However, be careful with conflicting names which can arise from loading the function directly.
 :::
 
 ## Packages
