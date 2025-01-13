@@ -6,10 +6,15 @@ format:
     revealjs:
         incremental: true 
         theme: night
-        code-fold: true
+        drop:
+            shortcut: ","
+            engine: pyodide
     pdf: default
 execute:
     eval: true
+    echo: true
+revealjs-plugins:
+  - drop
 ---
 
 <!--some high contrast colour choices : #DEC62F, #DE2F99, #2FD2DE-->
@@ -25,9 +30,9 @@ Motivation
 # Goal of today
 
 ```{.python}
-// This script exports metadata information to a JSON file.
-// The metadata includes the author, date, and length of the data.
-// The output is saved to 'data/data_info.json'.
+# This script exports metadata information to a JSON file.
+# The metadata includes the author, date, and length of the data.
+# The output is saved to 'data/data_info.json'.
 import json
 cell_count = [1,1,4,5,2]
 cell_count.sort()
@@ -48,8 +53,10 @@ This is an example to showcase what we will achieve today.
 
 # Basic usage
 
-- Most of the time with a GUI (graphical user interface)
 - Can be run from the terminal/console as well
+    - Start python by typing `python`/`python3` into the console
+    - You can quit by typing `quit()` into the console
+- Most of the time with a GUI (graphical user interface)
 
 # Environments
 
@@ -60,23 +67,25 @@ This is an example to showcase what we will achieve today.
 :::
 
 - Only bring the tools you need
-    - less bloated
-    - few conflicts
+    - Less bloated
+    - Few conflicts
 - Only project specific packages
 
 ## Make environment
 
-- can be done via console
+- Setting up an empty environment (get a drawer)
+- Can be done via console
 
 ::: {.fragment}
 ``` {.bash}
-python3 -m venv .venv
+python -m venv .venv
 ```
 :::
 
-- make one in VS Code
+- Make one in VS Code
     - `CTRL + SHIFT + P` → type: *env*
-    - select: *Create Environment*
+    - Select: *Create Environment*
+
 
 ## Start environment
 
@@ -91,20 +100,26 @@ source .venv/bin/activate
 ```
 - VS Code will start the environment for you
 
+## Quit environment
+
+``` {.bash}
+deactivate
+```
+
 # Install packages
 
 # Import
 
 When do you have to import?
 
-- only some functions are available by default
+- Only some functions are available by default
 
 ::: {.fragment}
 Let's open the 'math' drawer!
 :::
 
 ::: {.fragment}
-``` {.python}
+``` {python}
 import math
 ```
 :::
@@ -116,10 +131,12 @@ This will open our math *toolbox* drawer
 - Pull out a tool to use it with the dot notation: <span style="color:#DEC62F;font-family:monospace">toolbox</span><span style="color:#DE2F99;font-family:monospace">.</span><span style="color:#2FD2DE;font-family:monospace">tool</span>
 
 ::: {.fragment}
-``` {.python}
-#| output: true
-2+2
+``` {python}
 math.pi
+```
+
+``` {python}
+math.sin(1)
 ```
 :::
 
