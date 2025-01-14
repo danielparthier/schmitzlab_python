@@ -22,7 +22,7 @@ revealjs-plugins:
   - drop
 ---
 
-<!--some high contrast colour choices : #DEC62F, #DE2F99, #2FD2DE,  #696969 (DimGrey)-->
+<!--some high contrast colour choices : #DEC62F, #DE2F99, #2FD2DE,  #696969 (DimGrey), #008000 (comment green)-->
 # Why would you code?
 
 Motivation
@@ -327,6 +327,19 @@ plt.plot(random_number)
 
 ## Methods
 
-# Documentation
+## Documentation
+
+### Comments
+- <span style="color: #008000;"> # commenting is describing your code </span>
+- use the '#' symbol
+- audience you <span style="font-size: 22px;"> or other developers </span>
+- describing functionality
+- answers to 'why?'
+
+### Docstrings
+
+::: {.notes}
+when something is not intuitive or has to be paid attention to
+:::
 
 # Homework
