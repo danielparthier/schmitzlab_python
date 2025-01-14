@@ -98,6 +98,7 @@ A graphical user interface, like VS Code, provides code highlighting, formatting
 ![](https://images.stockcake.com/public/c/2/a/c2a89e7f-1460-40a8-9c2a-5b809111d0cd_large/organized-tool-drawer-stockcake.jpg){width="200px"}
 
 <small>Photo by <a href="https://stockcake.com/i/organized-tool-drawer_1348100_881763">Stockcake</a></small>
+
 :::
 
 - Only bring the tools you need
@@ -142,7 +143,8 @@ deactivate
 
 # Install packages
 
-![](https://www.anaconda.com/wp-content/uploads/2024/09/TS-Inline-Image-2-2048x1746.png){width="200px"}
+![](https://www.anaconda.com/wp-content/uploads/2024/09/TS-Inline-Image-2-2048x1746.png){width="500px"}
+
 
 # Import
 
@@ -233,7 +235,7 @@ cos(1)
 ## Word of advice
 
 - Some packages use the same function names
-- Avoid conflicts by referencing package or using alias
+- Avoid conflicts: reference package or use alias
 
 ::: {.fragment}
 ``` {python }
