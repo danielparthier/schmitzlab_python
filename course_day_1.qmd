@@ -190,6 +190,7 @@ pip install tensorflow==2.12
 :::
 
 ::: {.notes}
+a package is a colection of functions
 package maanger = a collection of tools that automates the process of installing, upgrading, configuring, and removing computer programs
 helps the user to easily and consistently work with packages - installing, updating, etc.
 provides some security, in the sense that packages that are provided by package managers are already checked for malfunctions
