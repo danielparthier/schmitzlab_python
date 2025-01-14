@@ -17,7 +17,7 @@ revealjs-plugins:
   - drop
 ---
 
-<!--some high contrast colour choices : #DEC62F, #DE2F99, #2FD2DE-->
+<!--some high contrast colour choices : #DEC62F, #DE2F99, #2FD2DE,  #696969 (DimGrey)-->
 # Why would you code?
 
 Motivation
@@ -136,7 +136,58 @@ deactivate
 
 # Install packages
 
-![](https://www.anaconda.com/wp-content/uploads/2024/09/TS-Inline-Image-2-2048x1746.png){width="200px"}
+Package managers
+
+- <span style="font-size: 30px;"> *What are they?*
+- <span style="font-size: 30px;"> pip (recommended) \
+<span style="color: #696969; font-size: 22px;">    conda-forge (if you really have to)</span>
+
+::: {.fragment}
+Usage
+
+![](img/miniML.jpg){.absolute top=130 right=10 width="630"}
+
+:::
+
+::: {.fragment}
+![](img/requirements.jpg){.absolute top=130 right=-20 width="550"}
+:::
+
+::: {.fragment}
+<div style="position: absolute; top: 500px; left: 55px;">
+``` {.bash}
+pip install --upgrade pip
+pip install -r requirements.txt
+```
+</div>
+
+<span style="position: absolute; top: 500px; left: 610px; color: #008000; font-size: 26px;">
+# installing packages from \
+requirements.txt file
+</span>
+
+:::
+
+::: {.fragment}
+<div style="position: absolute; top: 610px; left: 55px;">
+``` {.bash}
+pip uninstall tensorflow       
+pip install tensorflow==2.12
+```
+</div>
+
+<span style="position: absolute; top: 610px; left: 610px; color: #008000; font-size: 26px;">
+# uninstalling a package \
+# package with specified version
+</span>
+
+:::
+
+::: {.notes}
+package maanger = a collection of tools that automates the process of installing, upgrading, configuring, and removing computer programs
+helps the user to easily and consistently work with packages - installing, updating, etc.
+provides some security, in the sense that packages that are provided by package managers are already checked for malfunctions
+:::
 
 # Import
 
