@@ -59,10 +59,19 @@ This is an example to showcase what we will achieve today.
 - Most of the time with a GUI (graphical user interface)
 - Run scripts
 
+::: {.notes}
+The console is mainly used for quick testing of commands commands you will use once and won't need to track. If you want to save your workflow or keep track of what you did a script is required. In principle, a script is nothing else than a text file with a language specific extension (.py). The code is saved in such a file a can be used by activating the script as a whole or run single code lines. 
+:::
+
 # Visual Code Studio
 
 - 1 of multiple options ([PyCharm](https://www.jetbrains.com/pycharm/), [Spyder](https://www.spyder-ide.org/))
-- VS Code offers multifunctionality and integration of useful extensions
+- VS Code offers multifunctionality and integration of useful extensions (Git, Remote Explorer, Jupyter, GitHub Copilot)
+![](img/VSCode_script.png)
+
+::: {.notes}
+A graphical user inteface, as VS Code, provides code highlighting, formatting and completion. At the same time it give a structured overview of a project. In the case of VS Code you can use multiple languages by just adding the appropiate extension.
+:::
 
 # Environments
 
