@@ -57,6 +57,34 @@ This is an example to showcase what we will achieve today.
     - Start python by typing `python`/`python3` into the console
     - You can quit by typing `quit()` into the console
 - Most of the time with a GUI (graphical user interface)
+- Sometimes code is run in document style (*Jupyter Notebook*)
+- Run scripts
+
+::: {.notes}
+The console is mainly used for quick testing of commands you will use once and won't need to track. If you want to save your workflow or keep track of what you did, a script is required. In principle, a script is nothing else than a text file with a language-specific extension (.py). The code is saved in such a file and can be used by activating the script as a whole or running single code lines.
+:::
+
+## Visual Studio Code
+
+- 1 of multiple options ([PyCharm](https://www.jetbrains.com/pycharm/), [Spyder](https://www.spyder-ide.org/))
+- VS Code offers multifunctionality and integration of useful extensions (Git, Remote Explorer, Jupyter, GitHub Copilot)
+
+![](img/VSCode_script.png)
+
+::: {.notes}
+A graphical user interface, like VS Code, provides code highlighting, formatting, and completion. At the same time, it gives a structured overview of a project. In the case of VS Code, you can use multiple languages by just adding the appropriate extension.
+:::
+
+## Visual Studio Code (Features)
+
+- Multi-language support (*Python*, *R*, *Matlab*, *Julia*, *C++*, etc.)
+- Set up your project (make environment, create files and folders)
+- Provide visual notation (code highlighting)
+- Auto-complete code snippets
+- Show documentation of functions
+- Find and fix errors in code (debugging)
+- Synchronise code with GitHub
+- And much more...
 
 # Environments
 
@@ -68,13 +96,13 @@ This is an example to showcase what we will achieve today.
 
 - Only bring the tools you need
     - Less bloated
-    - Few conflicts
-- Only project specific packages
+    - Fewer conflicts
+- Only project-specific packages
 
 ## Make environment
 
 - Setting up an empty environment (get a drawer)
-- Can be done via console
+- Can be done via terminal
 
 ::: {.fragment}
 ``` {.bash}
