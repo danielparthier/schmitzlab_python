@@ -193,33 +193,6 @@ math.sin(1)
 Importing a package only has to happen once. By using `import package` everything from the package will be made available.
 :::
 
-## Import (direct)
-
-Load only parts of the package
-
-- This could mean single functions
-
-::: {.fragment}
-``` {python }
-from math import sin
-sin(1)
-```
-:::
-
-- Or parts of a package (modules) which can be used with dot notation (`.`)
-
-::: {.fragment}
-``` {python }
-from numpy import random
-random.normal(size=2)
-```
-:::
-
-
-::: {.notes}
-This way of import comes in handy if you just need a function or part of a large package. However, be careful with conflicting names which can arise from loading the function directly.
-:::
-
 ## Import (abbreviated)
 
 - Some packages can have long names or you want an abbreviation (ie. `numpy` to `np`)
@@ -236,17 +209,56 @@ import numpy as np
 Generally abbreviating longer packages will make writing, but also reading code easier. At the same time you should check whether your abbreviation makes sense and is understandable for others. There are also common ways to abbreviate well known packages. Some other examples would be `numpy` as `np`, `pandas` as `pd`.
 :::
 
-## Packages
+## Import single functions
 
-## Modules
+Load only parts of the package
 
-- Also a part of a package can be loaded using `.`
+- This could mean single functions or multiple functions/objects
+- Avoid clutter and only import what you need
+
+::: {.fragment}
+``` {python }
+#| eval: false
+from math import sin, cos
+
+sin(1)
+cos(1)
+```
+:::
+
+- Now everything after `import` is available
+
+## Word of advice
+
+- Some packages use the same function names
+- Avoid conflicts by referencing package or using alias
+
+::: {.fragment}
+``` {python }
+#| eval: false
+import math
+import numpy as np
+
+math.sin(1)
+np.sin(1)
+```
+:::
+
+
+::: {.notes}
+This way of import comes in handy if you just need a function or part of a large package. However, be careful with conflicting names which can arise from loading the function directly.
+:::
+
+## Import modules
+
+- Also a module as part of a package can be loaded using `.` or with `from`
 
 ::: {.fragment}
 ``` {python }
 #| eval: false
 from numpy import random
 import matplotlib.pyplot as plt
+
 random_number = random.normal(size=2)
 plt.plot(random_number)
 ```
