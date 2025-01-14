@@ -5,11 +5,17 @@ date: 2025-01-21
 format:
     revealjs:
         incremental: true 
+        highlight-style: dracula
         theme: night
         drop:
-            shortcut: ","
             engine: pyodide
-    pdf: default
+        mermaid: 
+          theme: dark
+    pdf:
+        mermaid: 
+          theme: neutral
+        highlight-style: github
+
 execute:
     eval: true
     echo: true
@@ -90,7 +96,7 @@ A graphical user interface, like VS Code, provides code highlighting, formatting
 
 ::: {.absolute top=0 right=0}
 ![](https://images.stockcake.com/public/c/2/a/c2a89e7f-1460-40a8-9c2a-5b809111d0cd_large/organized-tool-drawer-stockcake.jpg){width="200px"}
-<br>
+
 <small>Photo by <a href="https://stockcake.com/i/organized-tool-drawer_1348100_881763">Stockcake</a></small>
 :::
 
@@ -143,6 +149,21 @@ deactivate
 When do you have to import?
 
 - Only some functions are available by default
+- Other functions are available through external <span style="color:#DEC62F">packages</span>
+- A package can have smaller 'packages' inside called <span style="color:#DE2F99">modules</span>
+
+
+::: {.fragment}
+```{mermaid}
+%%| echo: false
+%%| fig-width: 5
+
+flowchart LR
+  A[package] --> B(module) --> C((function))
+```
+:::
+
+## Import packages
 
 ::: {.fragment}
 Let's open the 'math' drawer!
@@ -174,9 +195,76 @@ math.sin(1)
 Importing a package only has to happen once. By using `import package` everything from the package will be made available.
 :::
 
-## Packages
+## Import (abbreviated)
 
-## Modules
+- Some packages can have long names or you want an abbreviation (ie. `numpy` to `np`)
+- Assign a new name during the import (`as`)
+
+::: {.fragment}
+``` {python}
+#| eval: false
+import numpy as np
+```
+:::
+
+::: {.notes}
+Generally abbreviating longer packages will make writing, but also reading code easier. At the same time you should check whether your abbreviation makes sense and is understandable for others. There are also common ways to abbreviate well known packages. Some other examples would be `numpy` as `np`, `pandas` as `pd`.
+:::
+
+## Import single functions
+
+Load only parts of the package
+
+- This could mean single functions or multiple functions/objects
+- Avoid clutter and only import what you need
+
+::: {.fragment}
+``` {python }
+#| eval: false
+from math import sin, cos
+
+sin(1)
+cos(1)
+```
+:::
+
+- Now everything after `import` is available
+
+## Word of advice
+
+- Some packages use the same function names
+- Avoid conflicts by referencing package or using alias
+
+::: {.fragment}
+``` {python }
+#| eval: false
+import math
+import numpy as np
+
+math.sin(1)
+np.sin(1)
+```
+:::
+
+
+::: {.notes}
+This way of import comes in handy if you just need a function or part of a large package. However, be careful with conflicting names which can arise from loading the function directly.
+:::
+
+## Import modules
+
+- Also a module as part of a package can be loaded using `.` or with `from`
+
+::: {.fragment}
+``` {python }
+#| eval: false
+from numpy import random
+import matplotlib.pyplot as plt
+
+random_number = random.normal(size=2)
+plt.plot(random_number)
+```
+:::
 
 # Programming building blocks
 
