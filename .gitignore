@@ -2,4 +2,7 @@
 /course_day_1.html
 /course_day_1.pdf
 /course_day_1_files
+*.aux
+*.log
+*.tex
 **/.DS_Store
