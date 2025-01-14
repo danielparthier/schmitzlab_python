@@ -15,7 +15,6 @@ format:
         mermaid: 
           theme: neutral
         highlight-style: github
-
 execute:
     eval: true
     echo: true
@@ -143,8 +142,6 @@ deactivate
 
 # Install packages
 
-![](https://www.anaconda.com/wp-content/uploads/2024/09/TS-Inline-Image-2-2048x1746.png){width="500px"}
-
 
 # Import
 
@@ -165,7 +162,7 @@ flowchart LR
 ```
 :::
 
-## Import packages
+## Import packages 
 
 ::: {.fragment}
 Let's open the 'math' drawer!
@@ -173,7 +170,7 @@ Let's open the 'math' drawer!
 
 ::: {.fragment}
 ``` {python}
-import math
+import numpy
 ```
 :::
 
@@ -185,11 +182,11 @@ This will open our math *toolbox* drawer
 
 ::: {.fragment}
 ``` {python}
-math.pi
+numpy.pi
 ```
 
 ``` {python}
-math.sin(1)
+numpy.sin(1)
 ```
 :::
 
@@ -223,7 +220,7 @@ Load only parts of the package
 ::: {.fragment}
 ``` {python }
 #| eval: false
-from math import sin, cos
+from numpy import sin, cos
 
 sin(1)
 cos(1)
