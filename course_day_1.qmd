@@ -108,6 +108,8 @@ deactivate
 
 # Install packages
 
+![](https://www.anaconda.com/wp-content/uploads/2024/09/TS-Inline-Image-2-2048x1746.png){width="200px"}
+
 # Import
 
 When do you have to import?
