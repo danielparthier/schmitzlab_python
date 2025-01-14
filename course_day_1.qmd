@@ -229,6 +229,10 @@ cos(1)
 
 - Now everything after `import` is available
 
+::: {.notes}
+This way of import comes in handy if you just need a function or part of a large package. However, be careful with conflicting names which can arise from loading the function directly.
+:::
+
 ## Word of advice
 
 - Some packages use the same function names
@@ -243,11 +247,6 @@ import numpy as np
 math.sin(1)
 np.sin(1)
 ```
-:::
-
-
-::: {.notes}
-This way of import comes in handy if you just need a function or part of a large package. However, be careful with conflicting names which can arise from loading the function directly.
 :::
 
 ## Import modules
