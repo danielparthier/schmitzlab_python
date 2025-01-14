@@ -5,14 +5,20 @@ date: 2025-01-21
 format:
     revealjs:
         incremental: true 
+        highlight-style: dracula
         theme: night
         drop:
             engine: pyodide
-    pdf: default
+        mermaid: 
+          theme: dark
+    pdf:
+        mermaid: 
+          theme: neutral
+        highlight-style: github
+
 execute:
     eval: true
     echo: true
-highlight-style: dracula
 revealjs-plugins:
   - drop
 ---
@@ -90,7 +96,7 @@ A graphical user interface, like VS Code, provides code highlighting, formatting
 
 ::: {.absolute top=0 right=0}
 ![](https://images.stockcake.com/public/c/2/a/c2a89e7f-1460-40a8-9c2a-5b809111d0cd_large/organized-tool-drawer-stockcake.jpg){width="200px"}
-<br>
+
 <small>Photo by <a href="https://stockcake.com/i/organized-tool-drawer_1348100_881763">Stockcake</a></small>
 :::
 
@@ -141,6 +147,21 @@ deactivate
 When do you have to import?
 
 - Only some functions are available by default
+- Other functions are available through external <span style="color:#DEC62F">packages</span>
+- A package can have smaller 'packages' inside called <span style="color:#DE2F99">modules</span>
+
+
+::: {.fragment}
+```{mermaid}
+%%| echo: false
+%%| fig-width: 5
+
+flowchart LR
+  A[package] --> B(module) --> C((function))
+```
+:::
+
+## Import packages
 
 ::: {.fragment}
 Let's open the 'math' drawer!
@@ -172,17 +193,42 @@ math.sin(1)
 Importing a package only has to happen once. By using `import package` everything from the package will be made available.
 :::
 
-## Import (shorter names)
+## Import (direct)
 
-- Some packages can have long names (ie. `matplotlib`)
-- Assign a new name during the import
-- Also a part of a package can be loaded
+Load only parts of the package
+
+- This could mean single functions
+
+::: {.fragment}
+``` {python }
+from math import sin
+sin(1)
+```
+:::
+
+- Or parts of a package (modules) which can be used with dot notation (`.`)
+
+::: {.fragment}
+``` {python }
+from numpy import random
+random.normal(size=2)
+```
+:::
+
+
+::: {.notes}
+This way of import comes in handy if you just need a function or part of a large package. However, be careful with conflicting names which can arise from loading the function directly.
+:::
+
+## Import (abbreviated)
+
+- Some packages can have long names or you want an abbreviation (ie. `numpy` to `np`)
+- Assign a new name during the import (`as`)
 
 ::: {.fragment}
 ``` {python}
 #| eval: false
-import matplotlib.pyplot as plt
-plt.plot([1,2,3])
+import numpy as np
 ```
 :::
 
@@ -190,22 +236,21 @@ plt.plot([1,2,3])
 Generally abbreviating longer packages will make writing, but also reading code easier. At the same time you should check whether your abbreviation makes sense and is understandable for others. There are also common ways to abbreviate well known packages. Some other examples would be `numpy` as `np`, `pandas` as `pd`.
 :::
 
-## Import (direct)
-
-Load only parts of the package:
-
-``` {python }
-from math import sin
-sin(1)
-```
-
-::: {.notes}
-This way of import comes in handy if you just need a function or part of a large package. However, be careful with conflicting names which can arise from loading the function directly.
-:::
-
 ## Packages
 
 ## Modules
+
+- Also a part of a package can be loaded using `.`
+
+::: {.fragment}
+``` {python }
+#| eval: false
+from numpy import random
+import matplotlib.pyplot as plt
+random_number = random.normal(size=2)
+plt.plot(random_number)
+```
+:::
 
 # Programming building blocks
 
