@@ -59,6 +59,7 @@ with open(output_file, 'w') as f:
 ```
 
 ::: {.notes}
+_ _ _ _ _ _ _
 This is an example to showcase what we will achieve today.
 :::
 
@@ -72,6 +73,7 @@ This is an example to showcase what we will achieve today.
 - Run scripts
 
 ::: {.notes}
+_ _ _ _ _ _ _
 The console is mainly used for quick testing of commands you will use once and won't need to track. If you want to save your workflow or keep track of what you did, a script is required. In principle, a script is nothing else than a text file with a language-specific extension (.py). The code is saved in such a file and can be used by activating the script as a whole or running single code lines.
 :::
 
@@ -83,6 +85,7 @@ The console is mainly used for quick testing of commands you will use once and w
 ![](img/VSCode_script.png)
 
 ::: {.notes}
+_ _ _ _ _ _ _
 A graphical user interface, like VS Code, provides code highlighting, formatting, and completion. At the same time, it gives a structured overview of a project. In the case of VS Code, you can use multiple languages by just adding the appropriate extension.
 :::
 
@@ -195,10 +198,11 @@ pip install tensorflow==2.12
 :::
 
 ::: {.notes}
-a package is a colection of functions
-package maanger = a collection of tools that automates the process of installing, upgrading, configuring, and removing computer programs
-helps the user to easily and consistently work with packages - installing, updating, etc.
-provides some security, in the sense that packages that are provided by package managers are already checked for malfunctions
+_ _ _ _ _ _ _
+- a package is a colection of functions
+- package maanger = a collection of tools that automates the process of installing, upgrading, configuring, and removing computer programs
+- helps the user to easily and consistently work with packages - installing, updating, etc.
+- provides some security, in the sense that packages that are provided by package managers are already checked for malfunctions
 :::
 
 # Import
@@ -249,6 +253,7 @@ numpy.sin(1)
 :::
 
 ::: {.notes}
+_ _ _ _ _ _ _
 Importing a package only has to happen once. By using `import package` everything from the package will be made available.
 :::
 
@@ -265,6 +270,7 @@ import numpy as np
 :::
 
 ::: {.notes}
+_ _ _ _ _ _ _
 Generally abbreviating longer packages will make writing, but also reading code easier. At the same time you should check whether your abbreviation makes sense and is understandable for others. There are also common ways to abbreviate well known packages. Some other examples would be `numpy` as `np`, `pandas` as `pd`.
 :::
 
@@ -288,6 +294,7 @@ cos(1)
 - Now everything after `import` is available
 
 ::: {.notes}
+_ _ _ _ _ _ _
 This way of import comes in handy if you just need a function or part of a large package. However, be careful with conflicting names which can arise from loading the function directly.
 :::
 
