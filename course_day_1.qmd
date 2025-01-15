@@ -227,7 +227,7 @@ flowchart LR
 ## Import packages 
 
 ::: {.fragment}
-Let's open the 'math' drawer!
+Let's open the 'numpy' drawer!
 :::
 
 ::: {.fragment}
@@ -237,7 +237,7 @@ import numpy
 :::
 
 ::: {.fragment}
-This will open our math *toolbox* drawer
+This will open our nummpy *toolbox* drawer
 :::
 
 - Pull out a tool to use it with the dot notation: <span style="color:#DEC62F;font-family:monospace">toolbox</span><span style="color:#DE2F99;font-family:monospace">.</span><span style="color:#2FD2DE;font-family:monospace">tool</span>
@@ -349,15 +349,17 @@ var_a = 'a variable'
 value_a = 42
 print('more interesting when we include \n', var_a, 'with value', value_a)
 
-print(type(var_a))
-print(type(value_a))
+print('the varaible type of var_a is', type(var_a))
+print('the varaible type of value_a is', type(value_a))
 ```
 :::
 
-::: {.fragment .fade-in-then-out}
+:::{.relative}
+::: {.fragment}
 ``` {python}
 print('more interesting when we include \n', var_a, 'with value', value_a)
 ```
+:::
 :::
 
 
@@ -424,15 +426,17 @@ with open(output_file, 'w') as f:
 :::
 
 ::: {.notes}
-commenting
-- use #
-- when something is not intuitive or has to be paid attention to
-docstrings
-- ''' '''
-- from single functions, to modules, to whole scripts
-- different formal formats. see resources.docx for complete overview
-documenting projects
-- readme files: prupose of the project, use case example
+- commenting
+    - use #
+    - when something is not intuitive or has to be paid attention to
+- docstrings
+    - ''' '''
+    - from single functions, to modules, to whole scripts
+    - different formal formats. see resources.docx for complete overview
+    documenting projects
+    - appear (if existing) when you wigle the mouse above a function either in VSC or in jupyter notebook
+- readme files
+    - prupose of the project, use case example
 :::
 
 # Homework
