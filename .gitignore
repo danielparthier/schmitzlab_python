@@ -6,3 +6,5 @@
 *.log
 *.tex
 **/.DS_Store
+.**/
+course_day_1.quarto_ipynb

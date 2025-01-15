@@ -22,7 +22,7 @@ revealjs-plugins:
   - drop
 ---
 
-<!--some high contrast colour choices : #DEC62F, #DE2F99, #2FD2DE-->
+<!--some high contrast colour choices : #DEC62F, #DE2F99, #2FD2DE,  #696969 (DimGrey), #6a9956 (comment green), #ce9178 (doc string red)-->
 # Why would you code?
 
 Motivation
@@ -39,20 +39,27 @@ Motivation
 # The metadata includes the author, date, and length of the data.
 # The output is saved to 'data/data_info.json'.
 import json
-cell_count = [1,1,4,5,2]
-cell_count.sort()
-list_length = len(cell_count)
-output_file = 'data/data_info.json'
+import numpy as np
+path = 'data/'
+resting_membrane = [-70.1,-73.3,-69.8,-68.5,-71.2]
+resting_membrane_avg = np.mean(resting_membrane)
+sweeps = [1,2,3,4,5]
+voltage_unit = 'mV'
+sweep_count = len(resting_membrane)
+output_file = path + 'data_info.json'
 output_data = {
     'author': 'Doe, John',
     'date': '2025-01-10',
-    'length': list_length
+    'resting_membrane_avg': resting_membrane_avg,
+    'unit': voltage_unit,
+    'sweep_count': sweep_count
 }
 with open(output_file, 'w') as f:
     json.dump(output_data, f)
 ```
 
 ::: {.notes}
+_ _ _ _ _ _ _
 This is an example to showcase what we will achieve today.
 :::
 
@@ -66,6 +73,7 @@ This is an example to showcase what we will achieve today.
 - Run scripts
 
 ::: {.notes}
+_ _ _ _ _ _ _
 The console is mainly used for quick testing of commands you will use once and won't need to track. If you want to save your workflow or keep track of what you did, a script is required. In principle, a script is nothing else than a text file with a language-specific extension (.py). The code is saved in such a file and can be used by activating the script as a whole or running single code lines.
 :::
 
@@ -77,6 +85,7 @@ The console is mainly used for quick testing of commands you will use once and w
 ![](img/VSCode_script.png)
 
 ::: {.notes}
+_ _ _ _ _ _ _
 A graphical user interface, like VS Code, provides code highlighting, formatting, and completion. At the same time, it gives a structured overview of a project. In the case of VS Code, you can use multiple languages by just adding the appropriate extension.
 :::
 
@@ -142,6 +151,59 @@ deactivate
 
 # Install packages
 
+Package managers
+
+- <span style="font-size: 30px;"> *What are they?*
+- <span style="font-size: 30px;"> pip (recommended) \
+<span style="color: #696969; font-size: 22px;">    conda-forge (if you really have to)</span>
+
+::: {.fragment .appear-disappear}
+Usage
+
+<!-- ![](img/miniML.jpg){.absolute top=130 right=10 width="630"} -->
+:::
+
+::: {.fragment}
+![](img/requirements.jpg){.absolute top=130 right=-20 width="550"}
+:::
+
+::: {.fragment}
+<div style="position: absolute; top: 500px; left: 55px;">
+``` {.bash}
+pip install --upgrade pip
+pip install -r requirements.txt
+```
+</div>
+
+<span style="position: absolute; top: 500px; left: 610px; color: #6a9956; font-size: 26px;">
+# installing packages from \
+requirements.txt file
+</span>
+
+:::
+
+::: {.fragment}
+<div style="position: absolute; top: 610px; left: 55px;">
+``` {.bash}
+pip uninstall tensorflow       
+pip install tensorflow==2.12
+```
+</div>
+
+<span style="position: absolute; top: 610px; left: 610px; color: #6a9956; font-size: 26px;">
+# uninstalling a package \
+# package with specified version
+</span>
+
+:::
+
+::: {.notes}
+_ _ _ _ _ _ _
+- a package is a colection of functions
+- package maanger = a collection of tools that automates the process of installing, upgrading, configuring, and removing computer programs
+- helps the user to easily and consistently work with packages - installing, updating, etc.
+- provides some security, in the sense that packages that are provided by package managers are already checked for malfunctions
+:::
 
 # Import
 
@@ -165,7 +227,7 @@ flowchart LR
 ## Import packages 
 
 ::: {.fragment}
-Let's open the 'math' drawer!
+Let's open the 'numpy' drawer!
 :::
 
 ::: {.fragment}
@@ -175,7 +237,7 @@ import numpy
 :::
 
 ::: {.fragment}
-This will open our math *toolbox* drawer
+This will open our nummpy *toolbox* drawer
 :::
 
 - Pull out a tool to use it with the dot notation: <span style="color:#DEC62F;font-family:monospace">toolbox</span><span style="color:#DE2F99;font-family:monospace">.</span><span style="color:#2FD2DE;font-family:monospace">tool</span>
@@ -191,6 +253,7 @@ numpy.sin(1)
 :::
 
 ::: {.notes}
+_ _ _ _ _ _ _
 Importing a package only has to happen once. By using `import package` everything from the package will be made available.
 :::
 
@@ -207,6 +270,7 @@ import numpy as np
 :::
 
 ::: {.notes}
+_ _ _ _ _ _ _
 Generally abbreviating longer packages will make writing, but also reading code easier. At the same time you should check whether your abbreviation makes sense and is understandable for others. There are also common ways to abbreviate well known packages. Some other examples would be `numpy` as `np`, `pandas` as `pd`.
 :::
 
@@ -230,6 +294,7 @@ cos(1)
 - Now everything after `import` is available
 
 ::: {.notes}
+_ _ _ _ _ _ _
 This way of import comes in handy if you just need a function or part of a large package. However, be careful with conflicting names which can arise from loading the function directly.
 :::
 
@@ -325,8 +390,106 @@ path = 'data/'
 
 ## Simple functions
 
+::: {.fragment}
+``` {python}
+print('This function is boring')
+```
+:::
+
+::: {.fragment .fade-in-then-out}
+``` {python}
+var_a = 'a variable'
+value_a = 42
+print('more interesting when we include \n', var_a, 'with value', value_a)
+
+print('the varaible type of var_a is', type(var_a))
+print('the varaible type of value_a is', type(value_a))
+```
+:::
+
+:::{.relative}
+::: {.fragment}
+``` {python}
+print('more interesting when we include \n', var_a, 'with value', value_a)
+```
+:::
+:::
+
+
+
+
+
+:::{.notes}
+_ _ _ _ _ _ _
+- call a function
+-  function
+    - A named group of instructions that is executed when the function’s name is used in the code. 
+    - may process input arguments and return a result back
+    - logically grouping together pieces of code
+
+- print - display information on the screen
+:::
+
 ## Methods
 
-# Documentation
+## Documentation
+
+### <span style="color: #6a9956; position: relative; left:-110px;"> # comments describe the code </span>
+
+- audience - you <span style="font-size: 22px;"> or other developers </span>
+- describing functionality
+- 'why?'
+ 
+::: {.fragment}
+### <span style="color: #ce9178; position: relative; left:-110px;">'''docstrings give explanations'''</span>
+:::
+- explanation how to use
+- for single functions, modules, scripts
+
+::: {.fragment}
+
+::: {.absolute top=100 right=-100 }
+::: {.small}
+
+<!-- <div style="position: absolute; top: 100px; right:-100px; font-size: 28px; overflow-wrap: break-word; word-wrap: break-word;"> -->
+
+``` {.python}
+import json
+
+cell_count = [1,1,4,5,2]
+cell_count.sort()
+list_length = len(cell_count)
+output_file = 'data/data_info.json'
+output_data = {
+    'author': 'Doe, John',
+    'date': '2025-01-10',
+    'length': list_length
+}
+with open(output_file, 'w') as f:
+    json.dump(output_data, f)
+```
+:::
+:::
+<!-- </div> -->
+
+:::
+
+::: {.fragment}
+### <span style="position: relative; left:-110px;">README</span>
+:::
+
+::: {.notes}
+- commenting
+    - use #
+    - when something is not intuitive or has to be paid attention to
+- docstrings
+    - ''' '''
+    - from single functions, to modules, to whole scripts
+    - different formal formats. see resources.docx for complete overview
+    documenting projects
+    - appear (if existing) when you wigle the mouse above a function either in VSC or in jupyter notebook
+- readme files
+    - prupose of the project, use case example
+:::
 
 # Homework

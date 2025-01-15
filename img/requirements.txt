@@ -1,0 +1,9 @@
+scikit-learn
+numpy
+scipy
+pyabf
+PyQt5
+openpyxl
+matplotlib
+pandas
+tensorflow==2.12.0
