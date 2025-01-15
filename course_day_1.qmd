@@ -266,9 +266,62 @@ plt.plot(random_number)
 
 # Programming building blocks
 
+![](https://www.jaqueslondon.co.uk/cdn/shop/products/BuildingBlocks-WoodenStackingBlocksForKids-90219_1500x.jpg?v=1629795416){width="400px"}
+
+<small>Photo by <a href="https://www.jaqueslondon.co.uk/products/wooden-building-blocks">JAQUES London</a></small>
+
+::: {.notes}
+Building blocks are small objects which can be changed, combined and used in many different ways to build something more complex. We always start with small blocks first. Such building blocks exist in all the programming languages. They might differ slightly but in principle will be very similar.
+We can also think in the same way about tasks we want to solve. Most of the time we can make a big task into smaller tasks and a small task into even smaller blocks.
+:::
+
 ## Variables
 
+- Variables are objects we want to keep
+- We assign them and can use them in the future
+
+::: {.fragment}
+``` {python}
+#| code-line-numbers: false
+cell_count = 1
+```
+:::
+
+::: {.fragment}
+``` {python}
+#| code-line-numbers: false
+print(cell_count)
+```
+:::
+
+- Now `cell_count` will be `1` until changed or deleted
+- We can assign anything we want
+
+::: {.notes}
+In this example `print()` will print the content of `cell_count` to the terminal.  
+:::
+
 ## (data-) types
+
+::: {.fragment}
+There are many...
+:::
+
+- But you only need to know a few
+- They can do very different things
+
+### Strings
+
+- Strings are simply text
+- Very important for loading files
+    - Directory is a string
+- Typically made with `'text'` or `"text"`
+
+``` {python}
+#| code-line-numbers: false
+path = 'data/'
+```
+
 
 ## Simple functions
 
