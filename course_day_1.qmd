@@ -39,14 +39,20 @@ Motivation
 # The metadata includes the author, date, and length of the data.
 # The output is saved to 'data/data_info.json'.
 import json
-cell_count = [1,1,4,5,2]
-cell_count.sort()
-list_length = len(cell_count)
-output_file = 'data/data_info.json'
+import numpy as np
+path = 'data/'
+resting_membrane = [-70.1,-73.3,-69.8,-68.5,-71.2]
+resting_membrane_avg = np.mean(resting_membrane)
+sweeps = [1,2,3,4,5]
+voltage_unit = 'mV'
+sweep_count = len(resting_membrane)
+output_file = path + 'data_info.json'
 output_data = {
     'author': 'Doe, John',
     'date': '2025-01-10',
-    'length': list_length
+    'resting_membrane_avg': resting_membrane_avg,
+    'unit': voltage_unit,
+    'sweep_count': sweep_count
 }
 with open(output_file, 'w') as f:
     json.dump(output_data, f)
