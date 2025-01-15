@@ -34,6 +34,8 @@ Motivation
 
 # Goal of today
 
+<small>
+
 ```{.python}
 # This script exports metadata information to a JSON file.
 # The metadata includes the author, date, and length of the data.
@@ -57,6 +59,7 @@ output_data = {
 with open(output_file, 'w') as f:
     json.dump(output_data, f)
 ```
+</small>
 
 ::: {.notes}
 _ _ _ _ _ _ _
@@ -68,7 +71,7 @@ This is an example to showcase what we will achieve today.
 - Can be run from the terminal/console as well
     - Start python by typing `python`/`python3` into the console
     - You can quit by typing `quit()` into the console
-- Most of the time with a GUI (graphical user interface)
+- Most of the time with a **GUI** (graphical user interface)
 - Sometimes code is run in document style (*Jupyter Notebook*)
 - Run scripts
 
@@ -82,7 +85,9 @@ The console is mainly used for quick testing of commands you will use once and w
 - 1 of multiple options ([PyCharm](https://www.jetbrains.com/pycharm/), [Spyder](https://www.spyder-ide.org/))
 - VS Code offers multifunctionality and integration of useful extensions (Git, Remote Explorer, Jupyter, GitHub Copilot)
 
+::: {.fragment}
 ![](img/VSCode_script.png)
+:::
 
 ::: {.notes}
 _ _ _ _ _ _ _
