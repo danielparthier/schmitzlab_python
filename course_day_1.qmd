@@ -22,7 +22,7 @@ revealjs-plugins:
   - drop
 ---
 
-<!--some high contrast colour choices : #DEC62F, #DE2F99, #2FD2DE,  #696969 (DimGrey), #008000 (comment green)-->
+<!--some high contrast colour choices : #DEC62F, #DE2F99, #2FD2DE,  #696969 (DimGrey), #6a9956 (comment green), #ce9178 (doc string red)-->
 # Why would you code?
 
 Motivation
@@ -148,11 +148,10 @@ Package managers
 - <span style="font-size: 30px;"> pip (recommended) \
 <span style="color: #696969; font-size: 22px;">    conda-forge (if you really have to)</span>
 
-::: {.fragment}
+::: {.fragment .appear-disappear}
 Usage
 
-![](img/miniML.jpg){.absolute top=130 right=10 width="630"}
-
+<!-- ![](img/miniML.jpg){.absolute top=130 right=10 width="630"} -->
 :::
 
 ::: {.fragment}
@@ -167,7 +166,7 @@ pip install -r requirements.txt
 ```
 </div>
 
-<span style="position: absolute; top: 500px; left: 610px; color: #008000; font-size: 26px;">
+<span style="position: absolute; top: 500px; left: 610px; color: #6a9956; font-size: 26px;">
 # installing packages from \
 requirements.txt file
 </span>
@@ -182,7 +181,7 @@ pip install tensorflow==2.12
 ```
 </div>
 
-<span style="position: absolute; top: 610px; left: 610px; color: #008000; font-size: 26px;">
+<span style="position: absolute; top: 610px; left: 610px; color: #6a9956; font-size: 26px;">
 # uninstalling a package \
 # package with specified version
 </span>
@@ -325,21 +324,102 @@ plt.plot(random_number)
 
 ## Simple functions
 
+::: {.fragment}
+``` {python}
+print('This function is boring')
+```
+:::
+
+::: {.fragment .fade-in-then-out}
+``` {python}
+var_a = 'a variable'
+value_a = 42
+print('more interesting when we include \n', var_a, 'with value', value_a)
+
+print(type(var_a))
+print(type(value_a))
+```
+:::
+
+::: {.fragment .fade-in-then-out}
+``` {python}
+print('more interesting when we include \n', var_a, 'with value', value_a)
+```
+:::
+
+
+
+
+
+:::{.notes}
+_ _ _ _ _ _ _
+- call a function
+-  function
+    - A named group of instructions that is executed when the function’s name is used in the code. 
+    - may process input arguments and return a result back
+    - logically grouping together pieces of code
+
+- print - display information on the screen
+:::
+
 ## Methods
 
 ## Documentation
 
-### Comments
-- <span style="color: #008000;"> # commenting is describing your code </span>
-- use the '#' symbol
-- audience you <span style="font-size: 22px;"> or other developers </span>
-- describing functionality
-- answers to 'why?'
+### <span style="color: #6a9956; position: relative; left:-110px;"> # comments describe the code </span>
 
-### Docstrings
+- audience - you <span style="font-size: 22px;"> or other developers </span>
+- describing functionality
+- 'why?'
+ 
+::: {.fragment}
+### <span style="color: #ce9178; position: relative; left:-110px;">'''docstrings give explanations'''</span>
+:::
+- explanation how to use
+- for single functions, modules, scripts
+
+::: {.fragment}
+
+::: {.absolute top=100 right=-100 }
+::: {.small}
+
+<!-- <div style="position: absolute; top: 100px; right:-100px; font-size: 28px; overflow-wrap: break-word; word-wrap: break-word;"> -->
+
+``` {.python}
+import json
+
+cell_count = [1,1,4,5,2]
+cell_count.sort()
+list_length = len(cell_count)
+output_file = 'data/data_info.json'
+output_data = {
+    'author': 'Doe, John',
+    'date': '2025-01-10',
+    'length': list_length
+}
+with open(output_file, 'w') as f:
+    json.dump(output_data, f)
+```
+:::
+:::
+<!-- </div> -->
+
+:::
+
+::: {.fragment}
+### <span style="position: relative; left:-110px;">README</span>
+:::
 
 ::: {.notes}
-when something is not intuitive or has to be paid attention to
+commenting
+- use #
+- when something is not intuitive or has to be paid attention to
+docstrings
+- ''' '''
+- from single functions, to modules, to whole scripts
+- different formal formats. see resources.docx for complete overview
+documenting projects
+- readme files: prupose of the project, use case example
 :::
 
 # Homework
