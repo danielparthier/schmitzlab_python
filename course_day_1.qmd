@@ -71,7 +71,7 @@ This is an example to showcase what we will achieve today.
 - Can be run from the terminal/console as well
     - Start python by typing `python`/`python3` into the console
     - You can quit by typing `quit()` into the console
-- Most of the time with a **GUI** (graphical user interface)
+- Most of the time with a GUI (graphical user interface)
 - Sometimes code is run in document style (*Jupyter Notebook*)
 - Run scripts
 
@@ -378,7 +378,9 @@ There are many...
 :::
 
 - But you only need to know a few
-- They can do very different things
+- They can do very different things and might have different properties
+
+***
 
 ### Strings
 
@@ -387,11 +389,36 @@ There are many...
     - Directory is a string
 - Typically made with `'text'` or `"text"`
 
+::: {.fragment}
 ``` {python}
 #| code-line-numbers: false
 path = 'data/'
 ```
+:::
 
+***
+
+### What to do with strings
+
+Combine:
+
+::: {.fragment}
+``` {python}
+#| code-line-numbers: false
+path = 'data/'
+path + 'data_info.json'
+```
+:::
+
+Split string into multiple strings:
+
+::: {.fragment}
+``` {python}
+#| code-line-numbers: false
+output_file = path + 'data_info.json'
+output_file.split('/')
+```
+:::
 
 ## Simple functions
 
