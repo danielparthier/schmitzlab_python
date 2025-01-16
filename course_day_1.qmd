@@ -798,7 +798,6 @@ print('more interesting when we include \n', var_a, 'with value', value_a)
 print('the varaible type of var_a is', type(var_a))
 print('the varaible type of value_a is', type(value_a))
 ```
-<br>
 :::
 
 ::: {.fragment}
@@ -809,8 +808,6 @@ sorted_animal_list = sorted(animal_list)
 
 print(sorted_animal_list)
 ```
-
-
 :::
 
 :::{.notes}
@@ -951,25 +948,26 @@ out_data = create_meta_data_json('Verji', '2025-01-15', [-70.1, -73.3, -69.8, -6
 
 </small>
 
-
 ## Documentation
 
-### <span style="color: #6a9956; position: relative; left:-110px;"> # comments describe the code </span>
+::: {.fragment}
+### <span style="color: #6a9956;"> # comments describe the code </span>
 
 - audience - you <span style="font-size: 22px;"> or other developers </span>
-- describing functionality
+- functionality
 - 'why?'
+
+:::
  
 ::: {.fragment}
-### <span style="color: #ce9178; position: relative; left:-110px;">'''docstrings give explanations'''</span>
+### <span style="color: #ce9178;">'''docstrings give explanations'''</span>
 :::
-- explanation how to use
+- how to use?
 - for single functions, modules, scripts
 
 ::: {.fragment}
-### <span style="position: absolute; left:-110px;"> README </span> 
-<span style="position: relative; left:160px; font-size: 30px;"> - project documentation </span>
-
+### README.md
+- project documentation
 :::
 
 ::: {.notes}
