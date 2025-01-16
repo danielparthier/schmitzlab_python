@@ -11,6 +11,7 @@ format:
             engine: pyodide
         mermaid: 
           theme: dark
+        margin: 0.01
     pdf:
         mermaid: 
           theme: neutral
@@ -18,6 +19,7 @@ format:
 execute:
     eval: true
     echo: true
+ipynb-shell-interactivity: all
 revealjs-plugins:
   - drop
 ---
@@ -33,6 +35,8 @@ Motivation
 - Unlimited creativity
 
 # Goal of today
+
+<small>
 
 ```{.python}
 # This script exports metadata information to a JSON file.
@@ -57,6 +61,7 @@ output_data = {
 with open(output_file, 'w') as f:
     json.dump(output_data, f)
 ```
+</small>
 
 ::: {.notes}
 _ _ _ _ _ _ _
@@ -82,7 +87,9 @@ The console is mainly used for quick testing of commands you will use once and w
 - 1 of multiple options ([PyCharm](https://www.jetbrains.com/pycharm/), [Spyder](https://www.spyder-ide.org/))
 - VS Code offers multifunctionality and integration of useful extensions (Git, Remote Explorer, Jupyter, GitHub Copilot)
 
+::: {.fragment}
 ![](img/VSCode_script.png)
+:::
 
 ::: {.notes}
 _ _ _ _ _ _ _
@@ -220,7 +227,9 @@ When do you have to import?
 %%| fig-width: 5
 
 flowchart LR
-  A[package] --> B(module) --> C((function))
+    A[package] --> B(module) --> C((function))
+    style A fill:#DEC62F,stroke:#000000,color:#000000
+    style B fill:#DE2F99,stroke:#000000,color:#000000
 ```
 :::
 
@@ -331,14 +340,443 @@ plt.plot(random_number)
 
 # Programming building blocks
 
+![](https://www.jaqueslondon.co.uk/cdn/shop/products/BuildingBlocks-WoodenStackingBlocksForKids-90219_1500x.jpg?v=1629795416){width="400px"}
+
+<small>Photo by <a href="https://www.jaqueslondon.co.uk/products/wooden-building-blocks">JAQUES London</a></small>
+
+::: {.notes}
+Building blocks are small objects which can be changed, combined and used in many different ways to build something more complex. We always start with small blocks first. Such building blocks exist in all the programming languages. They might differ slightly but in principle will be very similar.
+We can also think in the same way about tasks we want to solve. Most of the time we can make a big task into smaller tasks and a small task into even smaller blocks.
+:::
+
 ## Variables
+
+- Variables are objects we want to keep
+- We assign them and can use them in the future
+
+::: {.fragment}
+``` {python}
+#| code-line-numbers: false
+cell_count = 1
+```
+:::
+
+::: {.fragment}
+``` {python}
+#| code-line-numbers: false
+print(cell_count)
+```
+:::
+
+- Now `cell_count` will be `1` until changed or deleted
+- We can assign anything we want
+
+::: {.notes}
+In this example `print()` will print the content of `cell_count` to the terminal.  
+:::
+
+## Operators
+
+![](https://img.freepik.com/free-photo/top-view-various-medical-equipment_23-2149283902.jpg){height="350px"}
+
+Kind of like functions^[more on functions later] but different
+
+- Have elements on both sides: `a operator b`
+
+*** 
+
+### Basic operators
+
+1. `+` add two elements together
+2. `-` subtract
+3. `*` multiply
+4. `**` power
+5. `/` division, `//` integer^[whole numbers] division
+
+
+***
+
+### Comparison operators
+
+Let's compare things!
+
+- Comparison operators will tell you if something is:
+    - `True` or `False`^[`True` and `False` are referred to as boolean/bool]
+
+1. `==` equal
+2. `!=` not equal
+3. `<` smaller and `>` larger
+4. `<=` smaller or equal and `>=` larger or equal
+
+***
+
+### Logical operators
+
+Logical operators check for conditions and returns `True` or `False`
+
+1. `and` checks if both side are `True`
+
+::: {style="font-size: 70%;"}
+::: {.fragment}
+``` {python}
+#| eval: false
+1==1 and 2==2
+1==1 and 2>3
+
+```
+:::
+
+::: {.fragment}
+``` {python}
+#| echo: false
+1==1 and 2==2
+1==1 and 2>3
+
+```
+:::
+:::
+
+2. `or` checks if at least one of the sides is `True`
+
+::: {style="font-size: 70%;"}
+::: {.fragment}
+``` {python}
+#| eval: false
+1==1 or 2!=2
+1==1 or 2==2
+1<0 or 1>4
+
+```
+:::
+
+::: {.fragment}
+::: {.fragment}
+``` {python}
+#| echo: false
+1==1 or 2!=2
+1==1 or 2==2
+1<0 or 1>4
+
+```
+:::
+:::
+:::
+
+
 
 ## (data-) types
 
-## Simple functions 
+::: {.fragment}
+There are many...
+:::
+
+- But you only need to know a few
+- They can do very different things and might have different properties
+
+***
+
+### Strings
+
+- Strings are simply text
+- Very important for loading files
+    - Directory is a string
+- Typically made with `'` or `"` as in `'text'` or `"text"`
+
 ::: {.fragment}
 ``` {python}
-# display information to the screen
+#| code-line-numbers: false
+path = 'data/'
+```
+:::
+
+***
+
+### What to do with strings
+
+
+::: {.fragment}
+Combine:
+
+``` {python}
+#| code-line-numbers: false
+path = 'data/'
+path + 'data_info.json'
+```
+:::
+
+
+::: {.fragment}
+Split string into multiple strings:
+
+``` {python}
+#| code-line-numbers: false
+output_file = path + 'data_info.json'
+output_file.split('/')
+```
+:::
+
+::: {.fragment .nonincremental}
+You are curious about other things?
+
+- Type the name of your string into the python console with a `.` and press `tab` twice
+    - `output_file.`
+:::
+
+***
+
+### Other things to do with strings
+
+::: {style="font-size: 80%;"}
+
+::: {.fragment .nonincremental}
+- They have a length
+    - Number of characters including spaces etc.
+
+``` {python}
+#| code-line-numbers: false
+test_string = 'four'
+len(test_string)
+```
+:::
+
+- You can access parts of a string (indexing)
+
+::: {.fragment}
+``` {python}
+#| code-line-numbers: false
+test_string[1]
+```
+:::
+
+::: {.fragment}
+What did you expect?
+:::
+
+::: {style="font-size: 60%;"}
+- In python we start counting positions from `0`
+    - 0: `'f'`, 1: `'o'`, 2: `'u'`, 3: `'r'` 
+:::
+
+::: {.fragment}
+What is your intuition for:
+
+``` {python}
+#| code-line-numbers: false
+#| eval: false
+test_string[-1]
+```
+:::
+
+::: {.fragment}
+``` {python}
+#| code-line-numbers: false
+#| echo: false
+test_string[-1]
+```
+:::
+:::
+
+::: {.notes}
+Strings, as you can see, are characters strung together to form a long chain of single elements. At the same time, you can still access and use single elements from your chain of characters. Should you want to access elements from the end of the chain, you can use negative indices and count backward.
+:::
+
+***
+
+### How to break things^[strings] 101
+
+Be careful how you write text or name folders
+
+::: {.fragment fragment-index=1}
+``` {python}
+#| eval: false
+#| code-line-numbers: false
+
+folder = 'path/sub_path\'
+```
+
+``` {python}
+#| echo: false
+error_message = '''  File "<stdin>", line 1
+    folder = 'path/sub_path\''
+             ^
+SyntaxError: unterminated string literal (detected at line 1)'''
+
+print(error_message)
+```
+:::
+
+::: {.nonincremental}
+::: {.fragment fragment-index=2}
+- Avoid [escape characters](https://python-reference.readthedocs.io/en/latest/docs/str/escapes.html )
+:::
+:::{.fragment fragment-index=3}
+- Some functions cannot handle special characters
+:::
+:::
+
+::: {.fragment fragment-index=3}
+![](https://media1.tenor.com/m/GQuiLoHa6mYAAAAd/taron-egerton.gif){.absolute bottom=10 right=0 width="300"}
+:::
+
+::: {.notes}
+Having complicated folder structures or names with special characters can break you code or functions which want to access this directory. Keep in mind to avoid such characters which could lead to errors (`*`, `\`, `/`). For example when using a folder `data/subpath/` with a file inside called `strange/file/name.txt` python will assume that `strange` and `file` are directories where a file called `name.txt` exists. 
+:::
+
+
+***
+
+### There are numbers and there are numbers
+
+::: {style="font-size: 80%;"}
+
+::: {.fragment .nonincremental}
+- Whole numbers: Integers `int`
+
+``` {python}
+#| code-line-numbers: false
+type(1)
+```
+:::
+
+::: {.fragment .nonincremental}
+- Real numbers: Floats `float`
+
+``` {python}
+#| code-line-numbers: false
+type(1.0)
+```
+:::
+
+::: {.fragment .nonincremental}
+- Most of the time it might not matter^[In python]
+
+``` {python}
+#| code-line-numbers: false
+1 == 1.0
+```
+:::
+
+- Sometimes there is a difference and we will see later why
+
+:::
+
+::: {.notes}
+Most of the time python handles the integer vs. float automatically. You will not have to worry about assigning. 
+:::
+
+***
+
+### Lists
+
+:::: {.columns}
+::: {.column width="30%"}
+![](https://images.pexels.com/photos/4057737/pexels-photo-4057737.jpeg)
+:::
+::: {.column width="70%"}
+- Multiple items in a list
+- Can be different types (`strings`, `ìnt`, `float`, or other objects)
+
+::: {.fragment}
+Let's list things!
+:::
+:::
+::::
+
+*** 
+
+### Make lists
+
+- Lists are made by using `[` and `]`
+- Elements are inside
+
+::: {.fragment}
+``` {python}
+author_list = ['Verjinia', 'Daniel']
+author_list
+```
+:::
+
+- Access elements inside a list^[remember we start counting at 0]
+
+::: {.fragment}
+```{python}
+author_list[1]
+author_list.index('Daniel')
+```
+:::
+
+***
+
+### Features of lists
+
+- Lists can do special things
+
+::: {.fragment}
+```{python}
+author_list.sort()
+author_list
+```
+:::
+
+::: {.fragment}
+```{python}
+author_list.append('Dietmar')
+author_list
+```
+:::
+
+::: {.fragment}
+```{python}
+author_list.remove('Daniel')
+author_list
+```
+:::
+
+***
+
+### Dictionary
+
+You want to to have different things in different things and maybe add some things?
+
+Hello `dictionary`!
+
+- Very flexible
+- Still very structured
+- Easily accessible
+
+***
+
+### Make dictionary
+
+::: {style="font-size: 80%;"}
+
+- Made using `{` and `}`
+- Contains key and values
+
+::: {.fragment}
+```{python}
+new_dict = {
+    "project": 'course',
+    "date": '2025-01-21',
+    "authors": author_list
+}
+new_dict
+```
+:::
+
+::: {.fragment}
+```{python}
+new_dict["authors"]
+new_dict["authors"].append('Daniel')
+new_dict
+```
+:::
+:::
+
+## Simple functions
+
+::: {.fragment}
+``` {python}
 print('This function is boring')
 ```
 :::
