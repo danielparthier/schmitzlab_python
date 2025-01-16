@@ -103,9 +103,9 @@ A graphical user interface, like VS Code, provides code highlighting, formatting
 # Environments
 
 ::: {.absolute top=0 right=0}
-![](https://images.stockcake.com/public/c/2/a/c2a89e7f-1460-40a8-9c2a-5b809111d0cd_large/organized-tool-drawer-stockcake.jpg){width="200px"}
+![](img/empty_drawers.jpg){width="400px"}
 
-<small>Photo by <a href="https://stockcake.com/i/organized-tool-drawer_1348100_881763">Stockcake</a></small>
+<!-- <small>Photo by <a href="https://stockcake.com/i/organized-tool-drawer_1348100_881763">Stockcake</a></small> -->
 
 :::
 
@@ -117,6 +117,11 @@ A graphical user interface, like VS Code, provides code highlighting, formatting
 ## Make environment
 
 - Setting up an empty environment (get a drawer)
+
+::: {.fragment .absolute bottom=0 right=0}
+![](img/drawer_with_venv.jpg){width="400px"}
+:::
+
 - Can be done via terminal
 
 ::: {.fragment}
@@ -151,23 +156,25 @@ deactivate
 
 # Install packages
 
+::: {.fragment .absolute top=-30 right=-30}
+![](img/package_maangers.jpg){width="250px"}
+:::
+
 Package managers
 
-- <span style="font-size: 30px;"> *What are they?*
-- <span style="font-size: 30px;"> pip (recommended) \
+- <span style="font-size: 30px;"> *What are they?* </span>
+- <span style="font-size: 30px;"> pip (recommended) </span> \
 <span style="color: #696969; font-size: 22px;">    conda-forge (if you really have to)</span>
 
-::: {.fragment .appear-disappear}
+::: {.fragment}
 Usage
-
-<!-- ![](img/miniML.jpg){.absolute top=130 right=10 width="630"} -->
 :::
 
 ::: {.fragment}
-![](img/requirements.jpg){.absolute top=130 right=-20 width="550"}
+![](img/requirements.jpg){.absolute top=120 left=400 width="350"}
 :::
 
-::: {.fragment}
+::: {.fragment}x
 <div style="position: absolute; top: 500px; left: 55px;">
 ``` {.bash}
 pip install --upgrade pip
@@ -200,7 +207,7 @@ pip install tensorflow==2.12
 ::: {.notes}
 _ _ _ _ _ _ _
 - a package is a colection of functions
-- package maanger = a collection of tools that automates the process of installing, upgrading, configuring, and removing computer programs
+- package manager = a collection of tools that automates the process of installing, upgrading, configuring, and removing computer programs
 - helps the user to easily and consistently work with packages - installing, updating, etc.
 - provides some security, in the sense that packages that are provided by package managers are already checked for malfunctions
 :::
