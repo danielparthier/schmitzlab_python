@@ -225,7 +225,9 @@ When do you have to import?
 %%| fig-width: 5
 
 flowchart LR
-  A[package] --> B(module) --> C((function))
+    A[package] --> B(module) --> C((function))
+    style A fill:#DEC62F,stroke:#000000,color:#000000
+    style B fill:#DE2F99,stroke:#000000,color:#000000
 ```
 :::
 
@@ -387,7 +389,7 @@ There are many...
 - Strings are simply text
 - Very important for loading files
     - Directory is a string
-- Typically made with `'text'` or `"text"`
+- Typically made with `'` or `"` as in `'text'` or `"text"`
 
 ::: {.fragment}
 ``` {python}
@@ -400,9 +402,10 @@ path = 'data/'
 
 ### What to do with strings
 
-Combine:
 
 ::: {.fragment}
+Combine:
+
 ``` {python}
 #| code-line-numbers: false
 path = 'data/'
@@ -410,14 +413,94 @@ path + 'data_info.json'
 ```
 :::
 
-Split string into multiple strings:
 
 ::: {.fragment}
+Split string into multiple strings:
+
 ``` {python}
 #| code-line-numbers: false
 output_file = path + 'data_info.json'
 output_file.split('/')
 ```
+:::
+
+***
+
+### How to break things^[strings]
+
+Be careful how you write text or name folders
+
+::: {.fragment fragment-index=1}
+``` {python}
+#| eval: false
+#| code-line-numbers: false
+
+folder = 'path/sub_path\'
+```
+
+``` {python}
+#| echo: false
+error_message = '''  File "<stdin>", line 1
+    folder = 'path/sub_path\''
+             ^
+SyntaxError: unterminated string literal (detected at line 1)'''
+
+print(error_message)
+```
+:::
+
+
+::: {.nonincremental}
+::: {.fragment fragment-index=2}
+- Avoid [escape characters](https://python-reference.readthedocs.io/en/latest/docs/str/escapes.html )
+:::
+:::{.fragment fragment-index=3}
+- Some functions cannot handle special characters
+:::
+:::
+
+::: {.fragment fragment-index=3}
+![](https://media1.tenor.com/m/GQuiLoHa6mYAAAAd/taron-egerton.gif){.absolute bottom=10 right=0 width="300"}
+:::
+
+***
+
+### There are numbers and there are numbers
+
+::: {style="font-size: 80%;"}
+- Whole numbers: Integers `int`
+
+::: {.fragment}
+``` {python}
+#| code-line-numbers: false
+type(1)
+```
+:::
+
+- Real numbers: Floats `float`
+
+::: {.fragment}
+``` {python}
+#| code-line-numbers: false
+type(1.0)
+```
+:::
+
+- Most of the time it might not matter^[In python]
+
+::: {.fragment}
+``` {python}
+#| code-line-numbers: false
+1 == 1.0
+```
+:::
+
+- Sometimes there is a difference and we will see later why
+
+:::
+
+::: {.notes}
+Most of the time python handles the integer vs float 
 :::
 
 ## Simple functions
