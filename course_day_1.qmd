@@ -732,6 +732,46 @@ author_list
 ```
 :::
 
+***
+
+### Dictionary
+
+You want to to have different things in different things and maybe add some things?
+
+Hello `dictionary`!
+
+- Very flexible
+- Still very structured
+- Easily accessible
+
+***
+
+### Make dictionary
+
+::: {style="font-size: 80%;"}
+
+- Made using `{` and `}`
+- Contains key and values
+
+::: {.fragment}
+```{python}
+new_dict = {
+    "project": 'course',
+    "date": '2025-01-21',
+    "authors": author_list
+}
+new_dict
+```
+:::
+
+::: {.fragment}
+```{python}
+new_dict["authors"]
+new_dict["authors"].append('Daniel')
+new_dict
+```
+:::
+:::
 
 ## Simple functions
 
