@@ -424,9 +424,77 @@ output_file.split('/')
 ```
 :::
 
+::: {.fragment .nonincremental}
+You are curious about other things to do?
+
+- Type the name of your string into the python console with a `.` and press `tab` twice
+    - `output_file.`
+:::
+
 ***
 
-### How to break things^[strings]
+### Other things to do with strings
+
+::: {style="font-size: 80%;"}
+
+::: {.fragment .nonincremental}
+- They have a length
+    - Number of characters including spaces etc.
+
+``` {python}
+#| code-line-numbers: false
+test_string = 'four'
+len(test_string)
+```
+:::
+
+- You can access parts of a string (indexing)
+
+::: {.fragment}
+``` {python}
+#| code-line-numbers: false
+test_string[1]
+```
+:::
+
+::: {.fragment}
+What did you expect?
+:::
+
+::: {style="font-size: 60%;"}
+- In python we start counting positions from `0`
+    0. `'f'`
+    1. `'o'`
+    2. `'u'`
+    3. `'r'` 
+:::
+
+::: {.fragment}
+What is your intuition about:
+
+``` {python}
+#| code-line-numbers: false
+#| eval: false
+test_string[-1]
+```
+:::
+
+::: {.fragment}
+``` {python}
+#| code-line-numbers: false
+#| echo: false
+test_string[-1]
+```
+:::
+:::
+
+::: {.notes}
+Strings, as you can see, are characters strung together to form a long chain of single elements. At the same time, you can still access and use single elements from your chain of characters. Should you want to access elements from the end of the chain, you can use negative indices and count backward.
+:::
+
+***
+
+### How to break things^[strings] 101
 
 Be careful how you write text or name folders
 
@@ -462,6 +530,11 @@ print(error_message)
 ::: {.fragment fragment-index=3}
 ![](https://media1.tenor.com/m/GQuiLoHa6mYAAAAd/taron-egerton.gif){.absolute bottom=10 right=0 width="300"}
 :::
+
+::: {.notes}
+Having complicated folder structures or names with special characters can break you code or functions which want to access this directory. Keep in mind to avoid such characters which could lead to errors (`*`, `\`, `/`). For example when using a folder `data/subpath/` with a file inside called `strange/file/name.txt` python will assume that `strange` and `file` are directories where a file called `name.txt` exists. 
+:::
+
 
 ***
 
@@ -501,7 +574,7 @@ type(1.0)
 :::
 
 ::: {.notes}
-Most of the time python handles the integer vs float 
+Most of the time python handles the integer vs. float automatically. You will not have to worry about assigning. 
 :::
 
 ## Simple functions
