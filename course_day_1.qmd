@@ -18,6 +18,7 @@ format:
 execute:
     eval: true
     echo: true
+ipynb-shell-interactivity: all
 revealjs-plugins:
   - drop
 ---
@@ -373,6 +374,95 @@ print(cell_count)
 In this example `print()` will print the content of `cell_count` to the terminal.  
 :::
 
+## Operators
+
+![](https://img.freepik.com/free-photo/top-view-various-medical-equipment_23-2149283902.jpg){height="350px"}
+
+Kind of like functions^[more on functions later] but different
+
+- Have elements on both sides: `a operator b`
+
+*** 
+
+### Basic operators
+
+1. `+` add two elements together
+2. `-` subtract
+3. `*` multiply
+4. `**` power
+5. `/` division, `//` integer^[whole numbers] division
+
+
+***
+
+### Comparison operators
+
+Let's compare things!
+
+- Comparison operators will tell you if something is:
+    - `True` or `False`^[`True` and `False` are referred to as boolean/bool]
+
+1. `==` equal
+2. `!=` not equal
+3. `<` smaller and `>` larger
+4. `<=` smaller or equal and `>=` larger or equal
+
+***
+
+### Logical operators
+
+Logical operators check for conditions and returns `True` or `False`
+
+1. `and` checks if both side are `True`
+
+::: {style="font-size: 70%;"}
+::: {.fragment}
+``` {python}
+#| eval: false
+1==1 and 2==2
+1==1 and 2>3
+
+```
+:::
+
+::: {.fragment}
+``` {python}
+#| echo: false
+1==1 and 2==2
+1==1 and 2>3
+
+```
+:::
+:::
+
+2. `or` checks if at least one of the sides is `True`
+
+::: {style="font-size: 70%;"}
+::: {.fragment}
+``` {python}
+#| eval: false
+1==1 or 2!=2
+1==1 or 2==2
+1<0 or 1>4
+
+```
+:::
+
+::: {.fragment}
+::: {.fragment}
+``` {python}
+#| echo: false
+1==1 or 2!=2
+1==1 or 2==2
+1<0 or 1>4
+
+```
+:::
+:::
+:::
+
+
+
 ## (data-) types
 
 ::: {.fragment}
@@ -463,14 +553,11 @@ What did you expect?
 
 ::: {style="font-size: 60%;"}
 - In python we start counting positions from `0`
-    0. `'f'`
-    1. `'o'`
-    2. `'u'`
-    3. `'r'` 
+    - 0: `'f'`, 1: `'o'`, 2: `'u'`, 3: `'r'` 
 :::
 
 ::: {.fragment}
-What is your intuition about:
+What is your intuition for:
 
 ``` {python}
 #| code-line-numbers: false
