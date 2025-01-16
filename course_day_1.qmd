@@ -178,33 +178,33 @@ Usage
 :::
 
 ::: {.fragment}
-![](img/requirements.jpg){.absolute top=120 left=400 width="350"}
+![](img/requirements.jpg){.absolute top=115 left=400 width="350"}
 :::
 
-::: {.fragment}x
-<div style="position: absolute; top: 500px; left: 55px;">
+::: {.fragment .absolute top=450 left=20}
 ``` {.bash}
 pip install --upgrade pip
 pip install -r requirements.txt
 ```
-</div>
+:::
 
-<span style="position: absolute; top: 500px; left: 610px; color: #6a9956; font-size: 26px;">
+::: {.fragment .absolute top=420 left=490}
+<span style="color: #6a9956; font-size: 26px;">
 # installing packages from \
 requirements.txt file
 </span>
 
 :::
 
-::: {.fragment}
-<div style="position: absolute; top: 610px; left: 55px;">
+::: {.fragment .absolute top=570 left=20}
 ``` {.bash}
 pip uninstall tensorflow       
 pip install tensorflow==2.12
 ```
-</div>
+:::
 
-<span style="position: absolute; top: 610px; left: 610px; color: #6a9956; font-size: 26px;">
+::: {.fragment .absolute top=540 left=490}
+<span style="color: #6a9956; font-size: 26px;">
 # uninstalling a package \
 # package with specified version
 </span>
