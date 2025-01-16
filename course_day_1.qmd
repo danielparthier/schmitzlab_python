@@ -468,27 +468,28 @@ print(error_message)
 ### There are numbers and there are numbers
 
 ::: {style="font-size: 80%;"}
+
+::: {.fragment .nonincremental}
 - Whole numbers: Integers `int`
 
-::: {.fragment}
 ``` {python}
 #| code-line-numbers: false
 type(1)
 ```
 :::
 
+::: {.fragment .nonincremental}
 - Real numbers: Floats `float`
 
-::: {.fragment}
 ``` {python}
 #| code-line-numbers: false
 type(1.0)
 ```
 :::
 
+::: {.fragment .nonincremental}
 - Most of the time it might not matter^[In python]
 
-::: {.fragment}
 ``` {python}
 #| code-line-numbers: false
 1 == 1.0
