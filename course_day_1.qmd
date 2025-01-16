@@ -515,7 +515,7 @@ output_file.split('/')
 :::
 
 ::: {.fragment .nonincremental}
-You are curious about other things to do?
+You are curious about other things?
 
 - Type the name of your string into the python console with a `.` and press `tab` twice
     - `output_file.`
