@@ -5,7 +5,7 @@ date: 2025-01-21
 format:
     revealjs:
         incremental: true 
-        highlight-style: dracula
+        highlight-style: oblivion
         theme: night
         drop:
             engine: pyodide
@@ -546,6 +546,7 @@ _ _ _ _ _ _ _
 
 ::: {.fragment}
 ::: {.absolute top=130 left=105}
+::: {style="font-size: 78%;"}
 
 ``` {.python}
 import json
@@ -572,10 +573,12 @@ def create_meta_data_json(patcher, date_of_rec, RMPs, save_path, save_filename):
     'date': date_of_rec,
     'resting_membrane_avg': avg_RMP,
     'unit': 'mV', # always mV for RMP
-    'sweep_count': num_sweeps}
+    'sweep_count': num_sweeps
+    }
 
   # confirmation to user
   print('saving the file ', save_filename, 'in', save_path)
+
   with open(save_path + save_filename, 'w') as f:
     json.dump(output_data, f)
   return output_data
@@ -584,6 +587,7 @@ resting_membrane = [-70.1, -73.3, -69.8, -68.5, -71.2]
 # create a out_dict containing the metadata
 out_dict = create_meta_data_json('Verji', '2025-01-15', resting_membrane, 'data/', 'verji_s_first_recording.json')
 ```
+:::
 :::
 :::
 
