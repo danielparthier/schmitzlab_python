@@ -11,6 +11,7 @@ format:
             engine: pyodide
         mermaid: 
           theme: dark
+        margin: 0.01
     pdf:
         mermaid: 
           theme: neutral
@@ -604,7 +605,6 @@ print(error_message)
 ```
 :::
 
-
 ::: {.nonincremental}
 ::: {.fragment fragment-index=2}
 - Avoid [escape characters](https://python-reference.readthedocs.io/en/latest/docs/str/escapes.html )
@@ -663,6 +663,75 @@ type(1.0)
 ::: {.notes}
 Most of the time python handles the integer vs. float automatically. You will not have to worry about assigning. 
 :::
+
+***
+
+### Lists
+
+:::: {.columns}
+::: {.column width="30%"}
+![](https://images.pexels.com/photos/4057737/pexels-photo-4057737.jpeg)
+:::
+::: {.column width="70%"}
+- Multiple items in a list
+- Can be different types (`strings`, `ìnt`, `float`, or other objects)
+
+::: {.fragment}
+Let's list things!
+:::
+:::
+::::
+
+*** 
+
+### Make lists
+
+- Lists are made by using `[` and `]`
+- Elements are inside
+
+::: {.fragment}
+``` {python}
+author_list = ['Verjinia', 'Daniel']
+author_list
+```
+:::
+
+- Access elements inside a list^[remember we start counting at 0]
+
+::: {.fragment}
+```{python}
+author_list[1]
+author_list.index('Daniel')
+```
+:::
+
+***
+
+### Features of lists
+
+- Lists can do special things
+
+::: {.fragment}
+```{python}
+author_list.sort()
+author_list
+```
+:::
+
+::: {.fragment}
+```{python}
+author_list.append('Dietmar')
+author_list
+```
+:::
+
+::: {.fragment}
+```{python}
+author_list.remove('Daniel')
+author_list
+```
+:::
+
 
 ## Simple functions
 
