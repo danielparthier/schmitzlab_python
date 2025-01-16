@@ -5,7 +5,7 @@ date: 2025-01-21
 format:
     revealjs:
         incremental: true 
-        highlight-style: dracula
+        highlight-style: oblivion
         theme: night
         drop:
             engine: pyodide
@@ -45,9 +45,9 @@ Motivation
 import json
 import numpy as np
 path = 'data/'
-resting_membrane = [-70.1,-73.3,-69.8,-68.5,-71.2]
+resting_membrane = [-70.1, -73.3, -69.8, -68.5, -71.2]
 resting_membrane_avg = np.mean(resting_membrane)
-sweeps = [1,2,3,4,5]
+sweeps = [1, 2, 3, 4, 5]
 voltage_unit = 'mV'
 sweep_count = len(resting_membrane)
 output_file = path + 'data_info.json'
@@ -781,8 +781,9 @@ print('This function is boring')
 ```
 :::
 
-::: {.fragment .fade-in-then-out}
+::: {.fragment} 
 ``` {python}
+# combine variable types
 var_a = 'a variable'
 value_a = 42
 print('more interesting when we include \n', var_a, 'with value', value_a)
@@ -790,19 +791,20 @@ print('more interesting when we include \n', var_a, 'with value', value_a)
 print('the varaible type of var_a is', type(var_a))
 print('the varaible type of value_a is', type(value_a))
 ```
+<br>
 :::
 
-:::{.relative}
 ::: {.fragment}
 ``` {python}
-print('more interesting when we include \n', var_a, 'with value', value_a)
+# sort a list
+animal_list = ['SNA 0254581', 'DSC 035576', 'SNA 0954581','SNA 0856662','DSC 024504']
+sorted_animal_list = sorted(animal_list)
+
+print(sorted_animal_list)
 ```
+
+
 :::
-:::
-
-
-
-
 
 :::{.notes}
 _ _ _ _ _ _ _
@@ -811,11 +813,137 @@ _ _ _ _ _ _ _
     - A named group of instructions that is executed when the function’s name is used in the code. 
     - may process input arguments and return a result back
     - logically grouping together pieces of code
-
-- print - display information on the screen
+- print() - display information on the screen
+- type() - outputs the variable type
+- can look up functions while typing code
 :::
 
-## Methods
+## Methods 
+
+::: {.fragment}
+``` {python}
+# sort a list with a method
+animal_list = ['SNA 0254581', 'DSC 035576', 'SNA 0954581','SNA 0856662','DSC 024504']
+
+sorted_animal_list = sorted(animal_list)
+
+# same thing but using a method
+
+animal_list.sort() # sorting in ascending order
+print(animal_list)
+
+animal_list.sort(reverse = True) # sorting in descending order
+print(animal_list)
+
+
+num_animals = len(animal_list)
+print("I've analyzed the date of", num_animals, "animals.")
+```
+
+:::
+
+:::{.notes}
+_ _ _ _ _ _ _
+- methods
+    - .sort()
+- Function — a set of instructions that perform a task
+- Method — a set of instructions that are associated with an object.
+- method is called with an object and has the possibility to modify data of an object.
+- can define your own functions --> live coding example
+:::
+
+
+## Define your own functinos 
+
+<small>
+
+::: {.fragment}
+::: {.absolute top=100 left=-80}
+
+``` {.python}
+import json
+import numpy as np
+
+path = 'data/'
+resting_membrane = [-70.1, -73.3, -69.8, -68.5, -71.2]
+
+resting_membrane_avg = np.mean(resting_membrane)
+sweeps = [1, 2, 3, 4, 5]
+voltage_unit = 'mV'
+sweep_count = len(resting_membrane)
+
+output_file = path + 'data_info.json'
+
+
+output_data = {
+    'author': 'Doe, John',
+    'date': '2025-01-10',
+    'resting_membrane_avg': resting_membrane_avg,
+    'unit': voltage_unit,
+    'sweep_count': sweep_count
+}
+
+with open(output_file, 'w') as f:
+    json.dump(output_data, f)
+```
+:::
+:::
+
+
+:::{.fragment}
+::: {.absolute top=100 right=70} 
+``` {.python}
+import json
+import numpy as np
+
+def create_meta_data_json(patcher, date_of_rec, RMPs, save_path, save_filename):
+  avg_RMP = np.mean(RMPs)
+  num_sweeps = len(RMPs)
+
+  output_data = {
+    'author': patcher,
+    'date': date_of_rec,
+    'resting_membrane_avg': avg_RMP,
+    'unit': 'mV',
+    'sweep_count': num_sweeps
+  }
+
+  print('saving the file ', save_filename, 'in', save_path)
+  with open(save_path + save_filename, 'w') as f:
+    json.dump(output_data, f)
+  
+  return output_data
+
+```
+:::
+:::
+<br>
+
+:::{.fragment}
+::: {.absolute top=430 right=-80}
+
+``` {.python}
+patcher = 'Verji'
+date_of_rec = '2025-01-15'
+save_path = 'data/'
+save_fn  = 'verji_s_first_recording.json'
+resting_membrane = [-70.1, -73.3, -69.8, -68.5, -71.2]
+
+# ways to call the function
+create_meta_data_json(patcher = 'Verji', date_of_rec = date_of_rec , RMPs = resting_membrane, \
+                                 save_path = save_path, save_filename = save_fn)
+
+out_data = create_meta_data_json(patcher, date_of_rec, resting_membrane, save_path, save_fn)
+
+out_data = create_meta_data_json('Verji', '2025-01-15', [-70.1, -73.3, -69.8, -68.5, -71.2], 'data/', \
+                                 'verji_s_first_recording.json')
+
+```
+:::
+:::
+
+</small>
+
 
 ## Documentation
 
@@ -832,38 +960,13 @@ _ _ _ _ _ _ _
 - for single functions, modules, scripts
 
 ::: {.fragment}
+### <span style="position: absolute; left:-110px;"> README </span> 
+<span style="position: relative; left:160px; font-size: 30px;"> - project documentation </span>
 
-::: {.absolute top=100 right=-100 }
-::: {.small}
-
-<!-- <div style="position: absolute; top: 100px; right:-100px; font-size: 28px; overflow-wrap: break-word; word-wrap: break-word;"> -->
-
-``` {.python}
-import json
-
-cell_count = [1,1,4,5,2]
-cell_count.sort()
-list_length = len(cell_count)
-output_file = 'data/data_info.json'
-output_data = {
-    'author': 'Doe, John',
-    'date': '2025-01-10',
-    'length': list_length
-}
-with open(output_file, 'w') as f:
-    json.dump(output_data, f)
-```
-:::
-:::
-<!-- </div> -->
-
-:::
-
-::: {.fragment}
-### <span style="position: relative; left:-110px;">README</span>
 :::
 
 ::: {.notes}
+_ _ _ _ _ _ _
 - commenting
     - use #
     - when something is not intuitive or has to be paid attention to
@@ -877,4 +980,62 @@ with open(output_file, 'w') as f:
     - prupose of the project, use case example
 :::
 
+## Documentation example <small>
+
+::: {.fragment}
+::: {.absolute top=130 left=105}
+::: {style="font-size: 78%;"}
+
+``` {.python}
+import json
+import numpy as np
+
+def create_meta_data_json(patcher, date_of_rec, RMPs, save_path, save_filename):
+    '''
+    Returns and saves a dictionary with metadata.
+
+    Args:       patcher (str): name of experimenter
+                date_of_rec (str): date of experiment
+                RMPs (list): list of recorded resting membrane potentials
+                save_path (str): destination folder
+                save_filename (str): name of the file
+
+    Returns:    output_data (dictionary): containing the metadata
+    '''
+  avg_RMP = np.mean(RMPs)
+  num_sweeps = len(RMPs) # have as many sweeps as values
+  
+  # define metadata dictionary
+  output_data = {
+    'author': patcher,
+    'date': date_of_rec,
+    'resting_membrane_avg': avg_RMP,
+    'unit': 'mV', # always mV for RMP
+    'sweep_count': num_sweeps
+    }
+
+  # confirmation to user
+  print('saving the file ', save_filename, 'in', save_path)
+
+  with open(save_path + save_filename, 'w') as f:
+    json.dump(output_data, f)
+  return output_data
+
+resting_membrane = [-70.1, -73.3, -69.8, -68.5, -71.2]
+# create a out_dict containing the metadata
+out_dict = create_meta_data_json('Verji', '2025-01-15', resting_membrane, 'data/', 'verji_s_first_recording.json')
+```
+:::
+:::
+:::
+
+</small>
+
 # Homework
+
+
+::: {.notes}
+_ _ _ _ _ _ _
+- explaining how to use jupyter notebooks for the homework
+- important to mention that the correct environment (kernel) needs to appear in the top right
+:::
