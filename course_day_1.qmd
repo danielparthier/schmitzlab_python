@@ -864,6 +864,11 @@ author_list
 ```
 :::
 
+
+::: {.notes}
+You can try to sort different lists with numbers and strings or even mixed lists. You will see that there is an order. Also try to use capitalised letters vs. small letters.   
+:::
+
 ***
 
 ### Dictionary
