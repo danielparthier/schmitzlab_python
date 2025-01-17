@@ -673,6 +673,94 @@ Most of the time python handles the integer vs. float automatically. You will no
 
 ***
 
+### Tuple
+
+::: {style="font-size: 80%;"}
+You can combine single elements into one
+
+- Chain elements and combine them with `(` and `)`
+- Tuples cannot be changed after creation ('immutable')
+
+::: {.fragment}
+``` {python}
+resting_membrane = (-70.1, -73.3, -69.8, -68.5, -71.2)
+```
+:::
+
+- Single elements can be accessed by their location
+
+::: {.fragment}
+``` {python}
+resting_membrane[1]
+```
+:::
+
+- Indexing start in python at 0^[more on indexing later]
+:::
+
+***
+
+### Slicing
+
+::: {style="font-size: 80%;"}
+Sometimes you want to access multiple elements in a chain
+
+- You can use `:` to access a slice between to indices
+
+::: {.fragment}
+``` {python}
+resting_membrane[1:3]
+```
+:::
+
+- Specify 'slice' properties `slice(start, stop, step)` 
+
+::: {.fragment}
+``` {python}
+resting_membrane[slice(1,5,2)]
+```
+:::
+
+- Alternative using `:stop:step` or `start::step`
+
+::: {.fragment}
+``` {python}
+resting_membrane[:5:2]
+resting_membrane[1::2]
+```
+:::
+:::
+
+::: {.notes}
+Slicing is an important part of accessing data. This allows you to select a subset of the whole data set without going through all the elements separately and without copying the data. When using `:` or `::` without having an integer in front python will start at the beginning index. If you use a negative index as a step, also referred to as stride, you will access items backwards. 
+:::
+
+***
+
+### Tuples cannot be changed
+
+- You cannot modify elements inside the tuple or add any after creation
+
+::: {.fragment}
+``` {python}
+#| eval: false
+#| code-line-numbers: false
+
+resting_membrane[1] = -72.2
+```
+
+``` {python}
+#| echo: false
+error_message = '''Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: 'tuple' object does not support item assignment'''
+
+print(error_message)
+```
+:::
+
+***
+
 ### Lists
 
 :::: {.columns}
@@ -682,6 +770,7 @@ Most of the time python handles the integer vs. float automatically. You will no
 ::: {.column width="70%"}
 - Multiple items in a list
 - Can be different types (`strings`, `ìnt`, `float`, or other objects)
+- Lists can be changed after creation ('mutable')
 
 ::: {.fragment}
 Let's list things!
@@ -712,6 +801,10 @@ author_list.index('Daniel')
 ```
 :::
 
+::: {.notes}
+The crucial difference between `list`s and `tuple`s is that a `list` allows you to modify the results. Depending on how your code generates the output you might have to decide to take the `list`. If you want that the chain cannot be modified by your code (intended or by accident) a `tuple` is a safe option.
+:::
+
 ***
 
 ### Features of lists
@@ -735,6 +828,13 @@ author_list
 ::: {.fragment}
 ```{python}
 author_list.remove('Daniel')
+author_list
+```
+:::
+
+::: {.fragment}
+```{python}
+author_list[1] = 'Daniel'
 author_list
 ```
 :::
@@ -774,7 +874,7 @@ new_dict
 ::: {.fragment}
 ```{python}
 new_dict["authors"]
-new_dict["authors"].append('Daniel')
+new_dict["authors"].append('Dietmar')
 new_dict
 ```
 :::
