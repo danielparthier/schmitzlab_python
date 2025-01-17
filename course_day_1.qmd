@@ -880,6 +880,46 @@ new_dict
 :::
 :::
 
+***
+
+### Properties of dictionary
+
+::: {style="font-size: 75%;"}
+
+- List all the keys
+
+::: {.fragment}
+```{python}
+new_dict.keys()
+```
+:::
+
+- Get all values
+
+::: {.fragment}
+```{python}
+new_dict.values()
+```
+:::
+
+- Get all values from specific key
+
+::: {.fragment}
+```{python}
+new_dict['authors']
+new_dict.get('authors')
+```
+:::
+
+- In case you need an output even if key does not exist use `.get`
+
+::: {.fragment}
+```{python}
+new_dict.get('experimenter', 'unknown')
+```
+:::
+:::
+
 ## Simple functions
 
 ::: {.fragment}
