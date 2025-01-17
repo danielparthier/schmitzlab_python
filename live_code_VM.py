@@ -1,12 +1,11 @@
-
-
 # simple build-in functions
 
-RMPs = [-70.1, -73.3, -69.8, -68.5, -71.2] 
+RMPs = [-70.1, -73.3, -69.8, -68.5, -71.2]
 len(RMPs)
 
 # simple functions - numpy
 
+from fcntl import F_DUPFD
 import numpy as np
 
 zeros = np.zeros(12)  # one or more elements of the same type
@@ -18,15 +17,15 @@ B = np.stack((random, ordered))
 
 # attributes
 print(A)
-A.shape
+print(A.shape)
 print(B)
 type(A) # type of the variable
 print(A.dtype) # type of the data inside the array
 
 # more functions
 A.flatten()
-A + B
-B - A
+print(A + B)
+print(B - A)
 
 # find the mean
 np.mean(A)
@@ -70,7 +69,6 @@ output_data = {
 with open(output_file, 'w') as f:
     json.dump(output_data, f)
 
-
 def create_meta_data_json(patcher, date_of_rec, RMPs, save_path, save_filename):
   avg_RMP = np.mean(RMPs)
   num_sweeps = len(RMPs)
@@ -89,3 +87,24 @@ def create_meta_data_json(patcher, date_of_rec, RMPs, save_path, save_filename):
   
   return output_data
 
+
+# define own functions
+def convert_miliseconds_to_minutes(ms):
+  minutes = ms / 60_000
+  return minutes
+
+# default parameters in a function
+def convert_time_to_ms(minutes, seconds = 0):
+  ms = minutes * 60_000 + seconds * 1000
+  return ms
+
+
+# documentation
+def convert_miliseconds_to_minutes(ms):
+  '''
+  this is the doc string
+  '''
+  minutes = ms / 60_000
+  return minutes
+
+help(convert_miliseconds_to_minutes)
