@@ -33,8 +33,13 @@ jobs:
       #     sudo apt-get update
       #     sudo apt-get install -y google-chrome-stable
 
-      - name: Render Quarto Project
+      - name: Render Quarto pdf
         uses: quarto-dev/quarto-actions/render@v2
         with:
           path: course_day_1.qmd
-          to: pdf, revealjs
+          to: pdf
+      - name: Render Quarto html
+        uses: quarto-dev/quarto-actions/render@v2
+        with:
+          path: course_day_1.qmd
+          to: html
