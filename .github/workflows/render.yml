@@ -43,3 +43,8 @@ jobs:
         with:
           path: course_day_1.qmd
           to: html
+      - uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Rendered Quarto files"
+          commit_options: "--no-verify"
+          branch: main
