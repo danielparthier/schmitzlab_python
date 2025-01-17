@@ -673,6 +673,30 @@ Most of the time python handles the integer vs. float automatically. You will no
 
 ***
 
+
+### None
+
+- A variable which exists but has not content can be `None`
+
+::: {.fragment}
+``` {python}
+var_a = None
+type(var_a)
+```
+:::
+
+- Your program then knows that `var_a` exists
+- You can change it later to another value
+
+::: {.fragment}
+``` {python}
+var_a = 1
+type(var_a)
+```
+:::
+
+***
+
 ### Tuple
 
 ::: {style="font-size: 80%;"}
