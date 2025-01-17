@@ -12,6 +12,7 @@ format:
         mermaid: 
           theme: dark
         margin: 0.01
+        embed-resources: true
     pdf:
         mermaid: 
           theme: neutral
