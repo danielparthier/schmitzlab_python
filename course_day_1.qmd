@@ -384,6 +384,22 @@ print(cell_count)
 In this example `print()` will print the content of `cell_count` to the terminal.  
 :::
 
+***
+
+### Assign multiple variables
+
+- Multiple variables can be assigned at the same time
+
+::: {.fragment}
+``` {python}
+#| code-line-numbers: false
+cell_count, cell_density, cell_size = 1, 0.3, 4.1
+```
+:::
+
+- Consider when this is useful (readability)
+- It is equivalent to writing 3 lines of code
+
 ## Operators
 
 ![](https://img.freepik.com/free-photo/top-view-various-medical-equipment_23-2149283902.jpg){height="350px"}
