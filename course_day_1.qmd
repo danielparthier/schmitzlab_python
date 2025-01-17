@@ -1033,10 +1033,16 @@ _ _ _ _ _ _ _
 
 ## Define your own functinos 
 
+::: {.fragment}
+::: {.absolute top=10 left=-180 style="transform: scale(0.7);"}
+![](img/function_explained.jpg)
+:::
+:::
+
 <small>
 
 ::: {.fragment}
-::: {.absolute top=100 left=-80}
+::: {.absolute top=290 left=-80}
 
 ``` {.python}
 import json
@@ -1122,6 +1128,19 @@ out_data = create_meta_data_json('Verji', '2025-01-15', [-70.1, -73.3, -69.8, -6
 
 </small>
 
+::: {.notes}
+_ _ _ _ _ _ _
+- The function definition opens with the keyword *def* followed by the name of the function (convert_miliseconds_to_minutes) and a parenthesized list of parameter names (ms). The body of the function — the statements that are executed when it runs — is indented below the definition line. The body concludes with a **return** keyword followed by the return value.
+    - can set default parameters in a function. this means that a function will work with those parameters, if one doensn't pass other ones
+- when passing parameters to a function, it's important that one passes them in the correct order
+-	local variables
+    - variables that live only inside of functions, minutes in our example
+    - they no longer exist once the function is done executing  show it by running minutes
+    - If we try to access their values outside of the function, we will encounter an error
+- global variables
+    - variables defined outside any function
+:::
+
 ## Documentation
 
 ::: {.fragment}
@@ -1138,6 +1157,7 @@ out_data = create_meta_data_json('Verji', '2025-01-15', [-70.1, -73.3, -69.8, -6
 :::
 - how to use?
 - for single functions, modules, scripts
+- accessed through *help()* 
 
 ::: {.fragment}
 ### README.md
