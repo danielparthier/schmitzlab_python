@@ -623,7 +623,7 @@ print(error_message)
 :::
 :::
 
-::: {.fragment fragment-index=3}
+::: {.fragment fragment-index=3 .content-visible when-format="html" }
 ![](https://media1.tenor.com/m/GQuiLoHa6mYAAAAd/taron-egerton.gif){.absolute bottom=10 right=0 width="300"}
 :::
 
