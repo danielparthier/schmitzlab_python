@@ -28,13 +28,13 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Install Chrome
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y google-chrome-stable
+      # - name: Install Chrome
+      #   run: |
+      #     sudo apt-get update
+      #     sudo apt-get install -y google-chrome-stable
 
-      - name: Render all QMD files
-        run: |
-          for file in *.qmd; do
-            quarto render "$file" --to pdf
-          done
+      - name: Render Quarto Project
+        uses: quarto-dev/quarto-actions/render@v2
+        with:
+          path: course_day_1.qmd
+          to: pdf
