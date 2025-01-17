@@ -726,43 +726,6 @@ resting_membrane[1]
 
 ***
 
-### Slicing
-
-::: {style="font-size: 80%;"}
-Sometimes you want to access multiple elements in a chain
-
-- You can use `:` to access a slice between to indices
-
-::: {.fragment}
-``` {python}
-resting_membrane[1:3]
-```
-:::
-
-- Specify 'slice' properties `slice(start, stop, step)` 
-
-::: {.fragment}
-``` {python}
-resting_membrane[slice(1,5,2)]
-```
-:::
-
-- Alternative using `:stop:step` or `start::step`
-
-::: {.fragment}
-``` {python}
-resting_membrane[:5:2]
-resting_membrane[1::2]
-```
-:::
-:::
-
-::: {.notes}
-Slicing is an important part of accessing data. This allows you to select a subset of the whole data set without going through all the elements separately and without copying the data. When using `:` or `::` without having an integer in front, Python will start at the 0 index. If you use a negative integer as a step, also referred to as stride, you will access items backwards.
-:::
-
-***
-
 ### Tuples cannot be changed
 
 - You cannot modify elements inside the tuple or add any after creation
@@ -869,6 +832,45 @@ author_list
 ::: {.notes}
 You can try to sort different lists with numbers and strings or even mixed lists. You will see that there is an order. Also try to use capitalised letters vs. small letters.   
 :::
+
+***
+
+### Slicing
+
+::: {style="font-size: 80%;"}
+Sometimes you want to access multiple elements in a chain
+
+- You can use `:` to access a slice between to indices
+
+::: {.fragment}
+``` {python}
+resting_membrane = [-70.1, -73.3, -69.8, -68.5, -71.2]
+resting_membrane[1:3]
+```
+:::
+
+- Specify 'slice' properties `slice(start, stop, step)` 
+
+::: {.fragment}
+``` {python}
+resting_membrane[slice(1,5,2)]
+```
+:::
+
+- Alternative using `:stop:step` or `start::step`
+
+::: {.fragment}
+``` {python}
+resting_membrane[:5:2]
+resting_membrane[1::2]
+```
+:::
+:::
+
+::: {.notes}
+Slicing is an important part of accessing data. This allows you to select a subset of the whole data set without going through all the elements separately and without copying the data. When using `:` or `::` without having an integer in front, Python will start at the 0 index. If you use a negative integer as a step, also referred to as stride, you will access items backwards.
+:::
+
 
 ***
 
