@@ -1135,7 +1135,6 @@ _ _ _ _ _ _ _
     - If we try to access their values outside of the function, we will encounter an error
 - global variables
     - variables defined outside any function
-
 :::
 
 ## Documentation
