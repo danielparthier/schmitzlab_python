@@ -40,7 +40,8 @@ Motivation
 
 ```{.python}
 # This script exports metadata information to a JSON file.
-# The metadata includes the author, date, and length of the data.
+# The metadata includes the author, date, and the average resting
+# membrane potential, units and the sweep count.
 # The output is saved to 'data/data_info.json'.
 import json
 import numpy as np
