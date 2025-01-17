@@ -29,4 +29,6 @@ jobs:
           python-version: '3.12'
           cache: 'pip' # caching pip dependencies
       - run: pip install -r requirements.txt
+      - name: Render docs
+        uses: quarto-dev/quarto-actions/render@v2
   
