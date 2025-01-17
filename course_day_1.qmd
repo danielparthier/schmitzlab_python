@@ -704,6 +704,7 @@ type(var_a)
 ::: {style="font-size: 80%;"}
 You can combine single elements into one
 
+- Can be different types (`strings`, `ìnt`, `float`, or other objects)
 - Chain elements and combine them with `(` and `)`
 - Tuples cannot be changed after creation ('immutable')
 
@@ -758,7 +759,7 @@ print(error_message)
 :::
 ::: {.column width="70%"}
 - Multiple items in a list
-- Can be different types (`strings`, `ìnt`, `float`, or other objects)
+- Similar to `tuple` but more powerful
 - Lists can be changed after creation ('mutable')
 
 ::: {.fragment}
