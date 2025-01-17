@@ -1,36 +1,39 @@
+name: Render and Publish
 on:
   push:
     branches:
       - main
 
-name: Render and Publish
 jobs:
   build-deploy:
     runs-on: ubuntu-latest
-    
     steps:
-      # - name: Quarto Render
-      #   uses: pommevilla/quarto-render@v0.3.11
       - name: Check out repository
-        uses: actions/checkout@v4 
-      - name: Set up Quarto
-        uses: quarto-dev/quarto-actions/setup@v2
-        env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          # To install LaTeX to build PDF book 
-          tinytex: true 
-      # From https://github.com/actions/setup-python
+        uses: actions/checkout@v4
+
       - name: Setup Python
-        uses: actions/setup-python@v3
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+        uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-          cache: 'pip' # caching pip dependencies
-      - run: pip install -r requirements.txt
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+        with:
+          tinytex: true
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Install Chrome
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y google-chrome-stable
+
       - name: Render docs
         uses: quarto-dev/quarto-actions/render@v2
         with:
-          path: docs/
-  
+          target: pdf
