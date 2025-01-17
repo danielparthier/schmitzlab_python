@@ -732,7 +732,7 @@ resting_membrane[1::2]
 :::
 
 ::: {.notes}
-Slicing is an important part of accessing data. This allows you to select a subset of the whole data set without going through all the elements separately and without copying the data. When using `:` or `::` without having an integer in front python will start at the beginning index. If you use a negative index as a step, also referred to as stride, you will access items backwards. 
+Slicing is an important part of accessing data. This allows you to select a subset of the whole data set without going through all the elements separately and without copying the data. When using `:` or `::` without having an integer in front, Python will start at the 0 index. If you use a negative integer as a step, also referred to as stride, you will access items backwards.
 :::
 
 ***
