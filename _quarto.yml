@@ -1,5 +1,5 @@
 project:
-  output-dir: ./output/  
+  output-dir: _output  
 format:
   pdf:
     mermaid: 
