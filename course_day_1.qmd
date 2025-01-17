@@ -676,7 +676,7 @@ Most of the time python handles the integer vs. float automatically. You will no
 
 ### None
 
-- A variable which exists but has not content can be `None`
+- A variable which exists but has no content can be `None`
 
 ::: {.fragment}
 ``` {python}
