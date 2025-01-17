@@ -1,7 +1,14 @@
 project:
-  output-dir: pdf/  
+  output-dir: ./output/  
 format:
   pdf:
     mermaid: 
       theme: neutral
     highlight-style: github
+  revealjs:
+    incremental: true 
+    highlight-style: oblivion
+    theme: night
+    mermaid: 
+      theme: dark
+    margin: 0.01

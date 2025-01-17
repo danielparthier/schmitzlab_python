@@ -37,4 +37,4 @@ jobs:
         uses: quarto-dev/quarto-actions/render@v2
         with:
           path: course_day_1.qmd
-          to: pdf
+          to: pdf, revealjs
