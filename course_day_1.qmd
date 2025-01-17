@@ -399,6 +399,7 @@ Kind of like functions^[more on functions later] but different
 3. `*` multiply
 4. `**` power
 5. `/` division, `//` integer^[whole numbers] division
+6. `%` modulus
 
 
 ***
