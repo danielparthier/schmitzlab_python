@@ -143,6 +143,9 @@ python -m venv .venv
     - `CTRL + SHIFT + P` → type: *env*
     - Select: *Create Environment*
 
+- <span style="color: #DE2F99;"> <u>TO DO</u> </span> 
+    - create an environment \
+    on your own laptop
 
 ## Start environment
 
@@ -220,6 +223,10 @@ _ _ _ _ _ _ _
 - helps the user to easily and consistently work with packages - installing, updating, etc.
 - provides some security, in the sense that packages that are provided by package managers are already checked for malfunctions
 :::
+
+## <span style="color: #DE2F99;"> <u>TO DO</u> </span> 
+- pip install notebook
+
 
 # Import
 
