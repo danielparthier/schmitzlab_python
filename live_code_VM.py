@@ -1,49 +1,77 @@
-# simple build-in functions
+## simple build-in functions
 
 RMPs = [-70.1, -73.3, -69.8, -68.5, -71.2]
-len(RMPs)
+# find the length
 
-# simple functions - numpy
-
-from fcntl import F_DUPFD
+## simple functions - numpy
 import numpy as np
 
-zeros = np.zeros(12)  # one or more elements of the same type
-ones = np.ones(12)
+# zeros, ones, random, ordered
 random = np.random.randint(12, None, 12) # low, high, size
-ordered = np.arange(12)
-A = np.stack((zeros, ones))
-B = np.stack((random, ordered))
 
-# attributes
-print(A)
-print(A.shape)
-print(B)
-type(A) # type of the variable
-print(A.dtype) # type of the data inside the array
+# np.stack
+#A = 
+#B = 
 
-# more functions
-A.flatten()
-print(A + B)
-print(B - A)
+# attributes: shape and dtype
 
-# find the mean
-np.mean(A)
-np.mean(B)
-np.mean(A+B)
-np.mean(B[1])
+# more functions: flatten, +, -
 
-# other funcs
-np.amax(B[1])
-np.amin(B[0])
+# mean, median, min, max
 
-list_a = [2,3,4,5]
-list_b = [1,3,5,7]
+# index
 
+## methods
+# look functions up
+
+animal_list = ['SNA 0254581', 'DSC 035576', 'SNA 0954581','SNA 0856662','DSC 024504']
+
+# using the function sorted()
+sorted_animal_list = sorted(animal_list)
+
+# same thing but using a method .sort()
+animal_list.sort() # sorting in ascending order
+print(animal_list)
+
+animal_list.sort(reverse = True) # sorting in descending order
+print(animal_list)
+
+
+num_animals = len(animal_list)
+print("I've analyzed the data of", num_animals, "animals.")
 
 
 # define your own functions
-# look for pieces that are changing
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# define own functions
+def convert_miliseconds_to_minutes(ms):
+  minutes = ms / 60_000
+  return minutes
+
+# default parameters in a function
+def convert_time_to_ms(minutes, seconds = 0):
+  ms = minutes * 60_000 + seconds * 1000
+  return ms
+
+# local and global variables
+
+# starting script
+
 import json
 import numpy as np
 
@@ -57,7 +85,6 @@ sweep_count = len(resting_membrane)
 
 output_file = path + 'data_info.json'
 
-
 output_data = {
     'author': 'Doe, John',
     'date': '2025-01-10',
@@ -68,6 +95,12 @@ output_data = {
 
 with open(output_file, 'w') as f:
     json.dump(output_data, f)
+
+
+
+
+
+# look for pieces that are changing
 
 def create_meta_data_json(patcher, date_of_rec, RMPs, save_path, save_filename):
   avg_RMP = np.mean(RMPs)
@@ -88,15 +121,6 @@ def create_meta_data_json(patcher, date_of_rec, RMPs, save_path, save_filename):
   return output_data
 
 
-# define own functions
-def convert_miliseconds_to_minutes(ms):
-  minutes = ms / 60_000
-  return minutes
-
-# default parameters in a function
-def convert_time_to_ms(minutes, seconds = 0):
-  ms = minutes * 60_000 + seconds * 1000
-  return ms
 
 
 # documentation

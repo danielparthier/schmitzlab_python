@@ -145,6 +145,7 @@ python -m venv .venv
 
 - <span style="color: #DE2F99;"> <u>TO DO</u> </span> 
     - create an environment \
+    and activate it \
     on your own laptop
 
 ## Start environment
@@ -225,8 +226,27 @@ _ _ _ _ _ _ _
 :::
 
 ## <span style="color: #DE2F99;"> <u>TO DO</u> </span> 
-- pip install notebook
+- in the terminal
+<br> 
 
+::: {.fragment}
+``` {.bash}
+pip install --upgrade pip
+pip install notebook
+python -c "import notebook; print(notebook.__version__)"
+```
+:::
+::: {.fragment}
+7.3.2
+:::
+<br>
+
+::: {.fragment}
+``` {.bash}
+pip install numpy
+python -c "import numpy; print(numpy.__version__)"
+```
+:::
 
 # Import
 
@@ -1029,19 +1049,18 @@ _ _ _ _ _ _ _
 # sort a list with a method
 animal_list = ['SNA 0254581', 'DSC 035576', 'SNA 0954581','SNA 0856662','DSC 024504']
 
+# using the function sorted()
 sorted_animal_list = sorted(animal_list)
 
-# same thing but using a method
-
+# same thing but using a method .sort()
 animal_list.sort() # sorting in ascending order
 print(animal_list)
 
 animal_list.sort(reverse = True) # sorting in descending order
 print(animal_list)
 
-
 num_animals = len(animal_list)
-print("I've analyzed the date of", num_animals, "animals.")
+print("I've analyzed the data of", num_animals, "animals.")
 ```
 
 :::
