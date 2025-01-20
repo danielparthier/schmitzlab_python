@@ -34,6 +34,14 @@ Motivation
 - Flexibility
 - Unlimited creativity
 
+## Use cases
+
+- Apply workflow on all your E-phys files
+- Use conditional rules for handling experiments
+- Restructure folder structure
+- Rename hundreds of files and add information
+- Get information about experiment from within the file
+
 <!--some high contrast colour choices : #DEC62F, #DE2F99, #2FD2DE,  #696969 (DimGrey), #6a9956 (comment green), #ce9178 (doc string red)-->
 
 # Goal of today
