@@ -160,7 +160,7 @@ source .venv/bin/activate
 ```
 - VS Code will start the environment for you
 
-## <span style="color: #DE2F99;"> <u>TO DO</u> </span> 
+## <span style="color: #DE2F99;text-decoration: underline;"> TO DO </span> 
 
 On your own laptop:
 
@@ -237,7 +237,8 @@ _ _ _ _ _ _ _
 - provides some security, in the sense that packages that are provided by package managers are already checked for malfunctions
 :::
 
-## <span style="color: #DE2F99;"> <u>TO DO</u> </span> 
+## <span style="color: #DE2F99;text-decoration: underline;"> TO DO </span> 
+
 - in the terminal
 <br> 
 
