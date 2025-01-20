@@ -82,7 +82,7 @@ This is an example to showcase what we will achieve today.
 # Basic usage
 
 - Can be run from the terminal/console as well
-    - Start python by typing `python`/`python3` into the console
+    - Start python by typing `python`/`python3`/`py` into the console
     - You can quit by typing `quit()` into the console
 - Most of the time with a GUI (graphical user interface)
 - Sometimes code is run in document style (*Jupyter Notebook*)
