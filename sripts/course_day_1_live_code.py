@@ -10,9 +10,57 @@ recording_time_hours = recording_time / 60 # how to get only whole hours?
 # how many seconds are left after 1 hour?
 seconds_after_hour_1 = recording_time_seconds % (60*60)
 
-# is there another way to get the same result?
+# compare outcomes with different calculations (watch brackets)
 seconds_after_hour_2 = ((recording_time_hours-1)*60*60)
 seconds_after_hour_1 == seconds_after_hour_2
+
+# working with strings
+file_name = 'exp_data/sub-01/ses-02/func/sub-01_ses-02_task-run_data.csv'
+file_name.split('/')
+
+# get the last part of the file name and split it
+file_split = file_name.split('/')[-1].split('_')
+file_split[2].split('-')[1]
+
+# working with lists
+RMPs = [-70.1, -73.3, -69.8, -68.5, -71.2]
+## get last element
+RMPs[-1]
+
+## which position is -69.8?
+RMPs.index(-69.8)
+## append a new value
+RMPs.append(-72.1)
+## sort
+RMPs.sort()
+## from lower to higher values
+RMPs.sort(reverse=True)
+
+
+# make dictionaries
+author_list = ['Verjinia', 'Daniel']
+new_dict = {
+    "project": 'course',
+    "date": '2025-01-21',
+    "authors": author_list
+}
+
+## subset the dictionary and add more information
+new_dict['authors']
+new_information = {
+    "duration": 120,
+    "unit": 'minutes',
+    "participants": 10
+}
+new_dict.update(new_information)
+
+## get feedback for missing information
+new_dict["location"]
+new_dict.get('location', 'missing')
+new_dict['location'] = 'Fenster der Wissenschaft'
+new_dict.get('location', 'missing')
+
+
 
 ## simple build-in functions
 
