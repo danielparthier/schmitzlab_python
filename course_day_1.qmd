@@ -25,7 +25,6 @@ revealjs-plugins:
   - drop
 ---
 
-<!--some high contrast colour choices : #DEC62F, #DE2F99, #2FD2DE,  #696969 (DimGrey), #6a9956 (comment green), #ce9178 (doc string red)-->
 # Why would you code?
 
 Motivation
@@ -34,6 +33,8 @@ Motivation
 - Reproducible workflow
 - Flexibility
 - Unlimited creativity
+
+<!--some high contrast colour choices : #DEC62F, #DE2F99, #2FD2DE,  #696969 (DimGrey), #6a9956 (comment green), #ce9178 (doc string red)-->
 
 # Goal of today
 
@@ -423,6 +424,12 @@ print(cell_count)
 
 ::: {.notes}
 In this example `print()` will print the content of `cell_count` to the terminal.  
+:::
+
+- Be careful with naming variables
+
+::: {.notes}
+Variable names should be easy to read and contain information about the content. At the same time they should not be too long. Avoid using cryptic names and try to use standardised nomenclature when possible.
 :::
 
 ***
