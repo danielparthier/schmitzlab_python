@@ -1,4 +1,4 @@
-## assign variables
+# assign variables
 
 cell_count, cell_density, cell_size = 3, 0.4, 4.1
 
@@ -124,13 +124,13 @@ print("I've analyzed the data of", num_animals, "animals.")
 
 # define own functions
 def convert_miliseconds_to_minutes(ms):
-  minutes = ms / 60_000
-  return minutes
+   minutes = ms / 60_000
+   return minutes
 
 # default parameters in a function
 def convert_time_to_ms(minutes, seconds = 0):
-  ms = minutes * 60_000 + seconds * 1000
-  return ms
+   ms = minutes * 60_000 + seconds * 1000
+   return ms
 
 # local and global variables
 
@@ -167,32 +167,33 @@ with open(output_file, 'w') as f:
 # look for pieces that are changing
 
 def create_meta_data_json(patcher, date_of_rec, RMPs, save_path, save_filename):
-  avg_RMP = np.mean(RMPs)
-  num_sweeps = len(RMPs)
+    avg_RMP = np.mean(RMPs)
+    num_sweeps = len(RMPs)
+    
+    output_data = {
+            'author': patcher,
+            'date': date_of_rec,
+            'resting_membrane_avg': avg_RMP,
+            'unit': 'mV',
+            'sweep_count': num_sweeps
+            }
+    
+    print('saving the file ', save_filename, 'in', save_path)
+    with open(save_path + save_filename, 'w') as f:
+            json.dump(output_data, f)
 
-  output_data = {
-    'author': patcher,
-    'date': date_of_rec,
-    'resting_membrane_avg': avg_RMP,
-    'unit': 'mV',
-    'sweep_count': num_sweeps
-  }
-
-  print('saving the file ', save_filename, 'in', save_path)
-  with open(save_path + save_filename, 'w') as f:
-    json.dump(output_data, f)
-  
-  return output_data
+    return output_data
 
 
 
 
 # documentation
 def convert_miliseconds_to_minutes(ms):
-  '''
-  this is the doc string
-  '''
-  minutes = ms / 60_000
-  return minutes
+   '''
+   this is the doc string
+   '''
+   minutes = ms / 60_000
+   return minutes
 
 help(convert_miliseconds_to_minutes)
+
