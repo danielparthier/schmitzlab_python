@@ -249,6 +249,7 @@ pip install notebook
 python -c "import notebook; print(notebook.__version__)"
 ```
 :::
+
 ::: {.fragment}
 7.3.2
 :::
