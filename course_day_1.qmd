@@ -143,10 +143,9 @@ python -m venv .venv
     - `CTRL + SHIFT + P` → type: *env*
     - Select: *Create Environment*
 
-- <span style="color: #DE2F99;"> <u>TO DO</u> </span> 
-    - create an environment \
-    and activate it \
-    on your own laptop
+::: {.notes}
+The `python` command determines the version of python used to setup the virtual environment. You could also specify a different version of python by excplicitly writing it out (i.e. `python3.13`).
+:::
 
 ## Start environment
 
@@ -160,6 +159,19 @@ python -m venv .venv
 source .venv/bin/activate
 ```
 - VS Code will start the environment for you
+
+## <span style="color: #DE2F99;"> <u>TO DO</u> </span> 
+
+On your own laptop:
+
+1. Create an environment
+2. activate it
+
+- Then try the second way using VS Code directly.
+
+::: {.notes}
+Removing a vritual environment requires to remove the folder where it is saved.
+:::
 
 ## Quit environment
 
