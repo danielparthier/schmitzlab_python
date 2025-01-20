@@ -1,3 +1,19 @@
+## assign variables
+
+cell_count, cell_density, cell_size = 3, 0.4, 4.1
+
+## basic operators
+recording_time = 93.5 # minutes
+recording_time_seconds = recording_time * 60
+recording_time_hours = recording_time / 60 # how to get only whole hours?
+
+# how many seconds are left after 1 hour?
+seconds_after_hour_1 = recording_time_seconds % (60*60)
+
+# is there another way to get the same result?
+seconds_after_hour_2 = ((recording_time_hours-1)*60*60)
+seconds_after_hour_1 == seconds_after_hour_2
+
 ## simple build-in functions
 
 RMPs = [-70.1, -73.3, -69.8, -68.5, -71.2]
