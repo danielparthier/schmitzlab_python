@@ -65,6 +65,9 @@ new_dict.get('location', 'missing')
 ## simple build-in functions
 
 RMPs = [-70.1, -73.3, -69.8, -68.5, -71.2]
+RMPs.sort()
+sorted()
+
 # find the length
 
 ## simple functions - numpy
@@ -131,6 +134,10 @@ def convert_miliseconds_to_minutes(ms):
 def convert_time_to_ms(minutes, seconds = 0):
    ms = minutes * 60_000 + seconds * 1000
    return ms
+
+convert_time_to_ms(minutes = 4, seconds = 10)
+convert_time_to_ms(4,10)
+convert_time_to_ms(5)
 
 # local and global variables
 
