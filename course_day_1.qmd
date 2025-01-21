@@ -153,7 +153,7 @@ python -m venv .venv
     - Select: *Create Environment*
 
 ::: {.notes}
-The `python` command determines the version of python used to setup the virtual environment. You could also specify a different version of python by excplicitly writing it out (i.e. `python3.13`).
+The `python` command determines the version of python used to setup the virtual environment. You could also specify a different version of python by excpilicitly writing it out (i.e. `python3.13`).
 :::
 
 ## Start environment
@@ -179,7 +179,7 @@ On your own laptop:
 - Then try the second way using VS Code directly.
 
 ::: {.notes}
-Removing a vritual environment requires to remove the folder where it is saved.
+Removing a virtual environment requires to remove the folder where it is saved.
 :::
 
 ## Quit environment
@@ -240,7 +240,7 @@ pip install tensorflow==2.12
 
 ::: {.notes}
 _ _ _ _ _ _ _
-- a package is a colection of functions
+- a package is a collection of functions
 - package manager = a collection of tools that automates the process of installing, upgrading, configuring, and removing computer programs
 - helps the user to easily and consistently work with packages - installing, updating, etc.
 - provides some security, in the sense that packages that are provided by package managers are already checked for malfunctions
@@ -305,7 +305,7 @@ import numpy
 :::
 
 ::: {.fragment}
-This will open our nummpy *toolbox* drawer
+This will open our numpy *toolbox* drawer
 :::
 
 - Pull out a tool to use it with the dot notation: <span style="color:#DEC62F;font-family:monospace">toolbox</span><span style="color:#DE2F99;font-family:monospace">.</span><span style="color:#2FD2DE;font-family:monospace">tool</span>
@@ -327,7 +327,7 @@ Importing a package only has to happen once. By using `import package` everythin
 
 ## Import (abbreviated)
 
-- Some packages can have long names or you want an abbreviation (ie. `numpy` to `np`)
+- Some packages can have long names or you want an abbreviation (i.e. `numpy` to `np`)
 - Assign a new name during the import (`as`)
 
 ::: {.fragment}
@@ -404,7 +404,7 @@ plt.plot(random_number)
 <small>Photo by <a href="https://www.jaqueslondon.co.uk/products/wooden-building-blocks">JAQUES London</a></small>
 
 ::: {.notes}
-Building blocks are small objects which can be changed, combined and used in many different ways to build something more complex. We always start with small blocks first. Such building blocks exist in all the programming languages. They might differ slightly but in principle will be very similar.
+Building blocks are small objects which can be changed, combined and used in many ways to build something more complex. We always start with small blocks first. Such building blocks exist in all the programming languages. They might differ slightly but in principle will be very similar.
 We can also think in the same way about tasks we want to solve. Most of the time we can make a big task into smaller tasks and a small task into even smaller blocks.
 :::
 
@@ -952,7 +952,7 @@ Slicing is an important part of accessing data. This allows you to select a subs
 
 ### Dictionary
 
-You want to to have different things in different things and maybe add some things?
+You want to have different things in different things and maybe add some things?
 
 Hello `dictionary`!
 
@@ -1061,14 +1061,14 @@ print(sorted_animal_list)
 
 :::{.notes}
 _ _ _ _ _ _ _
-- call a function
--  function
+- Call a function
+- function
     - A named group of instructions that is executed when the function’s name is used in the code. 
-    - may process input arguments and return a result back
-    - logically grouping together pieces of code
+    - May process input arguments and return a result back
+    - Logically grouping together pieces of code
 - print() - display information on the screen
 - type() - outputs the variable type
-- can look up functions while typing code
+- Can look up functions while typing code
 :::
 
 ## Methods 
@@ -1100,8 +1100,8 @@ _ _ _ _ _ _ _
     - .sort()
 - Function — a set of instructions that perform a task
 - Method — a set of instructions that are associated with an object.
-- method is called with an object and has the possibility to modify data of an object.
-- can define your own functions --> live coding example
+- Method is called with an object and has the possibility to modify data of an object.
+- Can define your own functions --> live coding example
 :::
 
 
@@ -1204,14 +1204,14 @@ out_data = create_meta_data_json('Verji', '2025-01-15', [-70.1, -73.3, -69.8, -6
 
 ::: {.notes}
 _ _ _ _ _ _ _
-- The function definition opens with the keyword *def* followed by the name of the function (convert_miliseconds_to_minutes) and a parenthesized list of parameter names (ms). The body of the function — the statements that are executed when it runs — is indented below the definition line. The body concludes with a **return** keyword followed by the return value.
-    - can set default parameters in a function. this means that a function will work with those parameters, if one doensn't pass other ones
-- when passing parameters to a function, it's important that one passes them in the correct order
--	local variables
-    - variables that live only inside of functions, minutes in our example
-    - they no longer exist once the function is done executing  show it by running minutes
-    - If we try to access their values outside of the function, we will encounter an error
-- global variables
+- The function definition opens with the keyword *def* followed by the name of the function (convert_milliseconds_to_minutes) and a parenthesized list of parameter names (ms). The body of the function — the statements that are executed when it runs — is indented below the definition line. The body concludes with a **return** keyword followed by the return value.
+    - Can set default parameters in a function. this means that a function will work with those parameters, if one does not pass other ones
+- When passing parameters to a function, it's important that one passes them in the correct order
+- Local variables
+    - Variables that live only inside of functions, minutes in our example
+    - They no longer exist once the function is done executing  show it by running minutes
+    - If we try to access their values outside the function, we will encounter an error
+- Global variables
     - variables defined outside any function
 :::
 
@@ -1220,37 +1220,37 @@ _ _ _ _ _ _ _
 ::: {.fragment}
 ### <span style="color: #6a9956;"> # comments describe the code </span>
 
-- audience - you <span style="font-size: 22px;"> or other developers </span>
-- functionality
-- 'why?'
+- Audience - you <span style="font-size: 22px;"> or other developers </span>
+- Functionality
+- 'Why?'
 
 :::
  
 ::: {.fragment}
 ### <span style="color: #ce9178;">'''docstrings give explanations'''</span>
 :::
-- how to use?
-- for single functions, modules, scripts
-- accessed through *help()* 
+- How to use?
+- For single functions, modules, scripts
+- Accessed through *help()* 
 
 ::: {.fragment}
 ### README.md
-- project documentation
+- Project documentation
 :::
 
 ::: {.notes}
 _ _ _ _ _ _ _
-- commenting
-    - use #
-    - when something is not intuitive or has to be paid attention to
-- docstrings
+- Commenting
+    - Use #
+    - When something is not intuitive or has to be paid attention to
+- Docstrings
     - ''' '''
-    - from single functions, to modules, to whole scripts
-    - different formal formats. see resources.docx for complete overview
+    - From single functions, to modules, to whole scripts
+    - Different formal formats. See resources.docx for complete overview
     documenting projects
-    - appear (if existing) when you wigle the mouse above a function either in VSC or in jupyter notebook
-- readme files
-    - prupose of the project, use case example
+    - Appear (if existing) when you wiggle the mouse above a function either in VSC or in jupyter notebook
+- Readme files
+    - Purpose of the project, use case example
 :::
 
 ## Documentation example <small>
@@ -1309,6 +1309,6 @@ out_dict = create_meta_data_json('Verji', '2025-01-15', resting_membrane, 'data/
 
 ::: {.notes}
 _ _ _ _ _ _ _
-- explaining how to use jupyter notebooks for the homework
-- important to mention that the correct environment (kernel) needs to appear in the top right
+- Explaining how to use jupyter notebooks for the homework
+- Important to mention that the correct environment (kernel) needs to appear in the top right
 :::
