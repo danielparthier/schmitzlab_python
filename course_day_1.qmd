@@ -82,9 +82,9 @@ This is an example to showcase what we will achieve today.
 # Basic usage
 
 - Can be run from the terminal/console as well
-    - Start python by typing `python`/`python3` into the console
+    - Start python by typing `python`/`python3`/`py` into the console
     - You can quit by typing `quit()` into the console
-- Most of the time with a GUI (graphical user interface)
+- Most of the tquartime with a GUI (graphical user interface)
 - Sometimes code is run in document style (*Jupyter Notebook*)
 - Run scripts
 
@@ -1093,6 +1093,22 @@ print("I've analyzed the data of", num_animals, "animals.")
 ```
 
 :::
+<small>
+
+::: {.fragment}
+```{.python}
+# other list methods
+author_list.append('Dietmar')
+author_list.remove('Daniel')
+
+# dictionary methods
+new_dict.keys()
+new_dict.values()
+
+```
+:::
+
+</small>
 
 :::{.notes}
 _ _ _ _ _ _ _
