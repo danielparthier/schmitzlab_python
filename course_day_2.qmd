@@ -207,6 +207,13 @@ There are useful resources regarding errors
 
 ### Types of errors
 
+1. SyntaxErrors
+2. NameError
+3. TypeError
+4. IndexError
+5. AttributeError
+6. etc.
+
 ***
 
 ### Fix errors
