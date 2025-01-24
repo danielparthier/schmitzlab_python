@@ -191,8 +191,22 @@ while check_condition:
 
 ```
 
-# Errors and how to read them
+## Errors and how to read them
 
-## Types of errors
+There are useful resources regarding errors
 
-## Fix errors
+- Simply googling works surprisingly well
+- You will often end up on [stackoverflow](https://stackoverflow.com/)
+    - There is no question which was not already asked^[if that is not true open up a question]
+
+::: {.fragment}
+![](/img/stackoverflow.png){width="500px" .absolute right=0}
+:::
+
+***
+
+### Types of errors
+
+***
+
+### Fix errors
