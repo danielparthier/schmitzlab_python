@@ -63,7 +63,7 @@ This is an example to showcase what we will achieve today.
 <!--some high contrast colour choices : #DEC62F, #DE2F99, #2FD2DE,  #696969 (DimGrey), #6a9956 (comment green), #ce9178 (doc string red)-->
 
 
-...
+***
 
 ### Short interlude
 
@@ -104,7 +104,7 @@ type(1.0)
 Most of the time python handles the integer vs. float automatically. You will not have to worry about assigning. 
 :::
 
-...
+***
 
 ## Conditional statements
 
@@ -113,34 +113,34 @@ The important question of what to do "if" something happens.
 - Programming languages are languages
 - `if` something is `True` you should do `something`, `else` do `something else`
 
-...
+***
 
 ### How to check if everything is true?
 
 
-...
+***
 
 ## For loops
 
 ### Enumerate
 
 
-...
+***
 
 ### Range
 
 
-...
+***
 
 ### List comprehension
 
 
-...
+***
 
 ### Compare different functions
 
 
-...
+***
 
 ## While loops
 
