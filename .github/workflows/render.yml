@@ -33,15 +33,25 @@ jobs:
       #     sudo apt-get update
       #     sudo apt-get install -y google-chrome-stable
 
-      - name: Render Quarto pdf
+      - name: Render Quarto pdf course_day_1.qmd
         uses: quarto-dev/quarto-actions/render@v2
         with:
           path: course_day_1.qmd
           to: pdf
-      - name: Render Quarto html
+      - name: Render Quarto pdf course_day_2.qmd
+        uses: quarto-dev/quarto-actions/render@v2
+        with:
+          path: course_day_2.qmd
+          to: pdf
+      - name: Render Quarto html course_day_1
         uses: quarto-dev/quarto-actions/render@v2
         with:
           path: course_day_1.qmd
+          to: revealjs
+      - name: Render Quarto html course_day_2
+        uses: quarto-dev/quarto-actions/render@v2
+        with:
+          path: course_day_2.qmd
           to: revealjs
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
