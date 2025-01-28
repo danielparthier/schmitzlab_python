@@ -84,7 +84,7 @@ This is an example to showcase what we will achieve today.
 - Can be run from the terminal/console as well
     - Start python by typing `python`/`python3`/`py` into the console
     - You can quit by typing `quit()` into the console
-- Most of the tquartime with a GUI (graphical user interface)
+- Most of the time with a GUI (graphical user interface)
 - Sometimes code is run in document style (*Jupyter Notebook*)
 - Run scripts
 
@@ -240,10 +240,10 @@ pip install tensorflow==2.12
 
 ::: {.notes}
 _ _ _ _ _ _ _
-- a package is a collection of functions
-- package manager = a collection of tools that automates the process of installing, upgrading, configuring, and removing computer programs
-- helps the user to easily and consistently work with packages - installing, updating, etc.
-- provides some security, in the sense that packages that are provided by package managers are already checked for malfunctions
+- A package is a collection of functions
+- Package manager = a collection of tools that automates the process of installing, upgrading, configuring, and removing computer programs
+- Helps the user to easily and consistently work with packages - installing, updating, etc.
+- Provides some security, in the sense that packages that are provided by package managers are already checked for malfunctions
 :::
 
 ## TO DO
