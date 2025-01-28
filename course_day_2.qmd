@@ -102,7 +102,7 @@ type(1.0)
 Most of the time python handles the integer vs. float automatically. You will not have to worry about assigning. 
 :::
 
-# Conditional statements
+## Conditional statements
 
 The important question of what to do "if" something happens.
 
@@ -165,8 +165,34 @@ else:
 Statements will be checked sequentially. Should one statement be `True` the corresponding part of the `if`/`elif` block will be executed. All other blocks after that will be skipped. This means one `True` expression is enough. 
 :::
 
+
+## Short forms for conditionals
+
+```{python}
+amplitude = 24
+is_action_potential = "is AP" if amplitude > 0 else "no AP"
+print(is_action_potential)
+```
+
+- You can write a lot on one line
+    - Do if you have to but be careful
+
 ## How to check if everything is true?
 
+- Validate all of the statements in a list
+```{python}
+everything_is_true = [True, True, True]
+something_is_true = [True, False, False]
+
+all(everything_is_true)
+all(something_is_true)
+```
+
+- Sometimes only something has to be true
+```{python}
+any(everything_is_true)
+any(something_is_true)
+```
 
 # For loops
 
