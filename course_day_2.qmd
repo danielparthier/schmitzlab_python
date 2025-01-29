@@ -71,6 +71,26 @@ This is an example to showcase what we will achieve today.
 
 <!--some high contrast colour choices : #DEC62F, #DE2F99, #2FD2DE,  #696969 (DimGrey), #6a9956 (comment green), #ce9178 (doc string red)-->
 
+::: {.fragment}
+- Scopes 
+- Local variables live and die inside a function
+- Global variables
+    - declared outside of fucntions
+    - lost when programme closed
+
+:::
+
+::: {.notes}
+_ _ _ _ _ _ _
+- global scope - of the whole program
+- local scope of a separate function
+- Local variables
+    - Variables that live only inside of functions, minutes in our example
+    - They no longer exist once the function is done executing  show it by running minutes
+    - If we try to access their values outside the function, we will encounter an error
+- Global variables
+    - variables defined outside any function
+:::
 
 # Short interlude
 
@@ -108,6 +128,7 @@ type(1.0)
 :::
 
 ::: {.notes}
+_ _ _ _ _ _ _
 Most of the time python handles the integer vs. float automatically. You will not have to worry about assigning. 
 :::
 
@@ -131,6 +152,7 @@ else:
 :::
 
 ::: {.notes}
+_ _ _ _ _ _ _
 This structure is the simplest of conditionals. The statement has to be `True` to enter the `if` part to execute. Should the statement by `False` it will skip and enter the `else` part which will then be executed.
 :::
 
@@ -171,6 +193,7 @@ else:
 :::
 
 ::: {.notes}
+_ _ _ _ _ _ _
 Statements will be checked sequentially. Should one statement be `True` the corresponding part of the `if`/`elif` block will be executed. All other blocks after that will be skipped. This means one `True` expression is enough. 
 :::
 
@@ -203,11 +226,121 @@ any(everything_is_true)
 any(something_is_true)
 ```
 
-# For loops
+## For loops
 
-## Enumerate
+``` {.python}
+for *element* in *iterable*:
+    *body*
+ ```
 
-## Range
+- iteration is the repetition of a process until a specific condition is met
+- what's iterable?
+
+
+::: {.fragment}
+ ``` {.python}
+ # calcualte a sum
+list_to_sum = [2,3,4,5,7]
+num_sum = 0
+for val in list_to_sum:
+    num_sum = num_sum + val
+ ```
+:::
+
+::: {.notes}
+_ _ _ _ _ _ _
+- For loop = An iterating function used to execute statements repeatedly.
+- Iterate = In programming, iteration is the repetition of a code or a process until a specific condition is met.
+- Iterables	= objects in Python that you can iterate over, e.g. container types (list, numpy  arrays,  tuples, sets), dictionary.keys(), strings
+:::
+
+
+## <u> TO DO </u>
+
+Given: <br> 
+A = [3, 4, 5, 9, 12, 87, -65, 300, 450, -32]
+
+Use *for loops* to: <br>
+1. Add 3 to each element of the list <br>
+2. Calculate the average of the list, but negative values are calcualted as 0s <br>
+3. Find the maximum valuen <br>
+4. Find the index (position) of the max value <br>
+
+
+## Index based *for loops* - range()
+
+::: {.fragment}
+- generates integer sequences
+- range(n) generates the series of n values from 0 to n − 1
+:::
+
+::: {.fragment}
+``` {python}
+for i in range(5):
+    print(i)
+```
+
+``` {python}
+
+# looping through data indices. find the max
+B = [1, 4, 6, 7, 89, 54]
+big_indx = 0
+for i in range(len(B)):
+    if B[i] > B[big_indx]:
+        big_indx = i
+print('The max value in B is', B[big_indx], 'found on position', big_indx)
+```
+
+:::
+
+## Index based *for loops* - enumerate()
+
+- assigns a count to each item within an iterable and returns it as an enumerate object
+
+::: {.fragment}
+
+``` {python}
+import numpy as np
+
+array_a = np.arange(20, 25)
+for indx, val in enumerate(array_a):
+    print('the index is', indx)
+    print('the value is', val)
+```
+
+:::
+
+::: {.fragment}
+! range() and enumerate() - none of the two returs a list of objects!
+:::
+
+::: {.notes}
+_ _ _ _ _ _ _
+- motivation: limitation in 'simple' for loops - we don't know the position of an element within a sequence, as we experienced in the last example
+- range(n) generates the series of n values from 0 to n − 1
+- precisely the series of valid indices into a sequence of length n
+- range() - returns a range object that is iterable
+- enumerate() - returns an enumerate object that is also iterable
+- they are mainly used in loops
+:::
+
+
+## Index based *for loops* [1]
+
+### enumerate()
+
+- one way to avoid nested loops
+
+## Break and continue statements
+
+- break - oimmediately terminates the loop
+
+::: {.notes}
+_ _ _ _ _ _ _
+- a break statement that immediately terminate a while or for loop when executed within its body
+- 
+:::
+
 
 ## List comprehension
 
