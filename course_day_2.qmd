@@ -39,16 +39,25 @@ Let's take a look at the homework
 <small>
 
 ```{.python}
-# TODO: add useful example to introduce class
-# Some function we have to decide
-def useful_function(par1, par2, par3):
-    # some loop
-    for i in par1:
-        if par1 == "something":
-            # do something
-        else:
-            pass # or something else
-    return None # or an object 
+import numpy as np
+import os
+
+def AP_check(folder):
+    AP_sweep_count = 0
+    for filename in os.listdir(folder):
+        if filename.endswith('.csv'):
+            with open(os.path.join(folder, filename), 'r') as file:
+                data = np.loadtxt(file, skiprows=1)
+                if any(data > 20):
+                    AP_sweep_count += 1
+                    print("AP found in " + filename)
+                else:
+                    print('No AP in ' + filename)
+    return AP_sweep_count
+
+file_path = 'data/sweeps_csv/'
+sweep_count = AP_check(file_path)
+print(sweep_count)
 ```
 </small>
 
@@ -243,3 +252,4 @@ There are useful resources regarding errors
 ***
 
 ### Fix errors
+
