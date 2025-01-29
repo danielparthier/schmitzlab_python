@@ -253,3 +253,9 @@ There are useful resources regarding errors
 
 ### Fix errors
 
+- Identify the error by checking the terminal output
+- Look at the line provided
+- Go backwards if error is nested
+
+<!-- TODO add code examples which cause error and can be fixed -->
+
