@@ -396,6 +396,32 @@ while check_condition:
 
 ```
 
+::: {.notes}
+_ _ _ _ _ _ _
+If your python terminal gets stuck at one point you can try do a `KeyboardInterrupt` using `Ctrl+C`, which will kill the running script.
+:::
+
+## Let's wait while we wait
+
+- Start a little counter
+
+::: {.fragment}
+``` {.python}
+import time
+counter = 0
+while counter < 10:
+    time.sleep(1)
+    counter += 1
+    print("You waited for " + str(counter) + " seconds...")
+```
+:::
+
+- Good for keeping processes running
+
+::: {.notes}
+Try to avoid `while` loops as much as possible. They can be useful if you do not have information how long it should run, but know it will at one point finish.
+:::
+
 ## Errors and how to read them
 
 There are useful resources regarding errors
@@ -423,9 +449,11 @@ There are useful resources regarding errors
 
 ### Fix errors
 
-- Identify the error by checking the terminal output
-- Look at the line provided
-- Go backwards if error is nested
+- Breath
+- Don't panic
+    - Identify the error by checking the terminal output
+    - Look at the line provided
+    - Go backwards if error is nested
 
 <!-- TODO add code examples which cause error and can be fixed -->
 
