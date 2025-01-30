@@ -97,5 +97,20 @@ print('the max value is ', biggest)
 print('its position is ', indx_max)
 print(A[indx_max])
 
+# fixing errors
+## syntax error
+def extract_max(a)
+    return max(a)
 
+## name error
+a = [1,2,3]
+def extract_max(a):
+    return maxa(a)
 
+def extract_double_max(a):
+    import numpy as np
+    c = np.array(a) * 2
+    return max(c)
+
+# type error
+extract_double_max(2)
