@@ -94,7 +94,7 @@ _ _ _ _ _ _ _
 
 # Short interlude
 
-::: {style="font-size: 80%;"}
+::: {style="font-size: 75%;"}
 
 ::: {.fragment .nonincremental}
 - Whole numbers: Integers `int`
@@ -105,12 +105,30 @@ type(1)
 ```
 :::
 
+::: {.fragment}
+``` {python}
+#| code-line-numbers: false
+number_string = "1"
+number = int(number_string)
+print(number)
+type(number)
+```
+:::
+
 ::: {.fragment .nonincremental}
 - Real numbers: Floats `float`
 
 ``` {python}
 #| code-line-numbers: false
 type(1.0)
+```
+:::
+
+::: {.fragment}
+``` {python}
+#| code-line-numbers: false
+fake_integer = float(1)
+type(fake_integer)
 ```
 :::
 
@@ -130,6 +148,25 @@ type(1.0)
 ::: {.notes}
 _ _ _ _ _ _ _
 Most of the time python handles the integer vs. float automatically. You will not have to worry about assigning. 
+:::
+
+## But sometimes it does
+
+- Sometimes you will see `is` instead of `==`.
+
+``` {python}
+#| code-line-numbers: false
+1 == 1.0
+1 is 1.0
+```
+
+- They often do the same thing but work differently
+    - Careful when using it!
+    - `is` and `is not` is also checking the type!
+
+::: {.notes}
+_ _ _ _ _ _ _
+This can sometimes lead to an unexpected behaviour if you did not plan to use it in this way. Only use `is` and `is not` when you really want the identical object.
 :::
 
 ## Conditional statements
