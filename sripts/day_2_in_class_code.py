@@ -136,3 +136,12 @@ print(a[3])
 
 for i in range(10):
     print(a[i])
+
+# attribute error
+a = [1,2,3]
+a.add(4)
+
+a.split("_")
+
+string_example = "Some_file.txt"
+string_example.append("day_2")
