@@ -102,6 +102,19 @@ print(A[indx_max])
 def extract_max(a)
     return max(a)
 
+def solve_problem():
+    b = ((1+1)*3))+(4/2)
+    c = b * 2
+
+
+# indentation error
+def extract_max(a):
+    if len(a) == 0:
+        print("Empty list")
+    else:
+    return max(a)
+
+
 ## name error
 a = [1,2,3]
 def extract_max(a):
@@ -114,3 +127,12 @@ def extract_double_max(a):
 
 # type error
 extract_double_max(2)
+
+print("We can connect strings with numbers like" + 2)
+
+# index error
+a = [1,2,3]
+print(a[3])
+
+for i in range(10):
+    print(a[i])
