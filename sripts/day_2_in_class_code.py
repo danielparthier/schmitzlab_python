@@ -97,5 +97,51 @@ print('the max value is ', biggest)
 print('its position is ', indx_max)
 print(A[indx_max])
 
+# fixing errors
+## syntax error
+def extract_max(a)
+    return max(a)
+
+def solve_problem():
+    b = ((1+1)*3))+(4/2)
+    c = b * 2
 
 
+# indentation error
+def extract_max(a):
+    if len(a) == 0:
+        print("Empty list")
+    else:
+    return max(a)
+
+
+## name error
+a = [1,2,3]
+def extract_max(a):
+    return maxa(a)
+
+def extract_double_max(a):
+    import numpy as np
+    c = np.array(a) * 2
+    return max(c)
+
+# type error
+extract_double_max(2)
+
+print("We can connect strings with numbers like" + 2)
+
+# index error
+a = [1,2,3]
+print(a[3])
+
+for i in range(10):
+    print(a[i])
+
+# attribute error
+a = [1,2,3]
+a.add(4)
+
+a.split("_")
+
+string_example = "Some_file.txt"
+string_example.append("day_2")

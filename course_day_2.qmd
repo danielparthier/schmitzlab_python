@@ -94,7 +94,7 @@ _ _ _ _ _ _ _
 
 # Short interlude
 
-::: {style="font-size: 80%;"}
+::: {style="font-size: 75%;"}
 
 ::: {.fragment .nonincremental}
 - Whole numbers: Integers `int`
@@ -102,6 +102,16 @@ _ _ _ _ _ _ _
 ``` {python}
 #| code-line-numbers: false
 type(1)
+```
+:::
+
+::: {.fragment}
+``` {python}
+#| code-line-numbers: false
+number_string = "1"
+number = int(number_string)
+print(number)
+type(number)
 ```
 :::
 
@@ -114,6 +124,14 @@ type(1.0)
 ```
 :::
 
+::: {.fragment}
+``` {python}
+#| code-line-numbers: false
+fake_integer = float(1)
+type(fake_integer)
+```
+:::
+
 ::: {.fragment .nonincremental}
 - Most of the time it might not matter^[In python]
 
@@ -123,13 +141,32 @@ type(1.0)
 ```
 :::
 
-- Sometimes there is a difference and we will see later why
+- Sometimes there is a difference, and we will see later why
 
 :::
 
 ::: {.notes}
 _ _ _ _ _ _ _
 Most of the time python handles the integer vs. float automatically. You will not have to worry about assigning. 
+:::
+
+## But sometimes it does
+
+- Sometimes you will see `is` instead of `==`.
+
+``` {python}
+#| code-line-numbers: false
+1 == 1.0
+1 is 1.0
+```
+
+- They often do the same thing but work differently
+    - Careful when using it!
+    - `is` and `is not` is also checking the type!
+
+::: {.notes}
+_ _ _ _ _ _ _
+This can sometimes lead to an unexpected behaviour if you did not plan to use it in this way. Only use `is` and `is not` when you really want the identical object.
 :::
 
 ## Conditional statements
@@ -211,7 +248,7 @@ print(is_action_potential)
 
 ## How to check if everything is true?
 
-- Validate all of the statements in a list
+- Validate all the statements in a list
 ```{python}
 everything_is_true = [True, True, True]
 something_is_true = [True, False, False]
@@ -262,8 +299,8 @@ A = [3, 4, 5, 9, 12, 87, -65, 300, 450, -32]
 
 Use *for loops* to: <br>
 1. Add 3 to each element of the list <br>
-2. Calculate the average of the list, but negative values are calcualted as 0s <br>
-3. Find the maximum valuen <br>
+2. Calculate the average of the list, but negative values are calculated as 0s <br>
+3. Find the maximum value <br>
 4. Find the index (position) of the max value <br>
 
 
@@ -311,7 +348,7 @@ for indx, val in enumerate(array_a):
 :::
 
 ::: {.fragment}
-! range() and enumerate() - none of the two returs a list of objects!
+! range() and enumerate() - none of the two returns a list of objects!
 :::
 
 ::: {.notes}
@@ -337,7 +374,7 @@ _ _ _ _ _ _ _
 
 ::: {.notes}
 _ _ _ _ _ _ _
-- a break statement that immediately terminate a while or for loop when executed within its body
+- a break statement that immediately terminates a while or for loop when executed within its body
 - 
 :::
 
@@ -359,6 +396,32 @@ while check_condition:
 
 ```
 
+::: {.notes}
+_ _ _ _ _ _ _
+If your python terminal gets stuck at one point you can try a `KeyboardInterrupt` using `Ctrl+C`, which will kill the running script.
+:::
+
+## Let's wait while we wait
+
+- Start a little counter
+
+::: {.fragment}
+``` {.python}
+import time
+counter = 0
+while counter < 10:
+    time.sleep(1)
+    counter += 1
+    print("You waited for " + str(counter) + " seconds...")
+```
+:::
+
+- Good for keeping processes running
+
+::: {.notes}
+Try to avoid `while` loops as much as possible. They can be useful if you do not have information how long it should run, but know it will at one point finish.
+:::
+
 ## Errors and how to read them
 
 There are useful resources regarding errors
@@ -376,19 +439,22 @@ There are useful resources regarding errors
 ### Types of errors
 
 1. SyntaxErrors
-2. NameError
-3. TypeError
-4. IndexError
-5. AttributeError
-6. etc.
+2. IndentationError
+3. NameError
+4. TypeError
+5. IndexError
+6. AttributeError
+7. etc.
 
 ***
 
 ### Fix errors
 
-- Identify the error by checking the terminal output
-- Look at the line provided
-- Go backwards if error is nested
+- Breath
+- Don't panic
+    - Identify the error by checking the terminal output
+    - Look at the line provided
+    - Go backwards if error is nested
 
 <!-- TODO add code examples which cause error and can be fixed -->
 
