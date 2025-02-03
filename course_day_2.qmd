@@ -370,7 +370,7 @@ _ _ _ _ _ _ _
 
 ## Break and continue statements
 
-- break - oimmediately terminates the loop
+- break - immediately terminates the loop
 
 ::: {.notes}
 _ _ _ _ _ _ _
