@@ -94,7 +94,7 @@ _ _ _ _ _ _ _
 
 # Short interlude
 
-::: {style="font-size: 75%;"}
+::: {style="font-size: 70%;"}
 
 ::: {.fragment .nonincremental}
 - Whole numbers: Integers `int`
@@ -154,11 +154,13 @@ Most of the time python handles the integer vs. float automatically. You will no
 
 - Sometimes you will see `is` instead of `==`.
 
+::: {.fragment}
 ``` {python}
 #| code-line-numbers: false
 1 == 1.0
 1 is 1.0
 ```
+:::
 
 - They often do the same thing but work differently
     - Careful when using it!
@@ -249,6 +251,8 @@ print(is_action_potential)
 ## How to check if everything is true?
 
 - Validate all the statements in a list
+
+::: {.fragment}
 ```{python}
 everything_is_true = [True, True, True]
 something_is_true = [True, False, False]
@@ -256,12 +260,17 @@ something_is_true = [True, False, False]
 all(everything_is_true)
 all(something_is_true)
 ```
+:::
+
 
 - Sometimes only something has to be true
+
+::: {.fragment}
 ```{python}
 any(everything_is_true)
 any(something_is_true)
 ```
+:::
 
 ## For loops
 
@@ -390,9 +399,12 @@ _ _ _ _ _ _ _
     - Some loops never finish (get stuck)
     - Make sure that condition for ending the loop can be fullfilled
 
+::: {.fragment}
 ``` {.python}
 while check_condition:
     perform_task()
+:::
+
 
 ```
 
@@ -455,6 +467,4 @@ There are useful resources regarding errors
     - Identify the error by checking the terminal output
     - Look at the line provided
     - Go backwards if error is nested
-
-<!-- TODO add code examples which cause error and can be fixed -->
 
