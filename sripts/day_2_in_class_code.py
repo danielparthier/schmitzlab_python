@@ -145,3 +145,25 @@ a.split("_")
 
 string_example = "Some_file.txt"
 string_example.append("day_2")
+
+# fix errors
+
+import numpy as np
+import os
+
+def AP_check(folder):
+    AP_sweep_count = 0
+    for filename in os.listdir(folde):
+        if filename.endsith('.csv'):
+            with open(os.path.join(folder, filename), 'r') as file:
+            data = np.loadtxt(file, skiprows=1)
+                if any(data > 20):
+                    AP_sweep_count += 1
+                    print("AP found in " + filename)
+                else:
+                    print('No AP in ' + filename)
+    return AP_sweep_count
+
+file_path = 'data/sweeps_csv/'
+sweep_count = AP_check(file_path)
+print(sweep_count)
