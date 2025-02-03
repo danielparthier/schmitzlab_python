@@ -403,10 +403,8 @@ _ _ _ _ _ _ _
 ``` {.python}
 while check_condition:
     perform_task()
-:::
-
-
 ```
+:::
 
 ::: {.notes}
 _ _ _ _ _ _ _
