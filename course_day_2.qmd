@@ -85,8 +85,8 @@ _ _ _ _ _ _ _
 - global scope - of the whole program
 - local scope of a separate function
 - Local variables
-    - Variables that live only inside of functions, minutes in our example
-    - They no longer exist once the function is done executing  show it by running minutes
+    - Variables that live only inside of functions
+    - They no longer exist once the function is done executing
     - If we try to access their values outside the function, we will encounter an error
 - Global variables
     - variables defined outside any function
@@ -342,6 +342,7 @@ print('The max value in B is', B[big_indx], 'found on position', big_indx)
 ## Index based *for loops* - enumerate()
 
 - assigns a count to each item within an iterable and returns it as an enumerate object
+- one way to avoid nested loops
 
 ::: {.fragment}
 
@@ -371,26 +372,18 @@ _ _ _ _ _ _ _
 :::
 
 
-## Index based *for loops* [1]
-
-### enumerate()
-
-- one way to avoid nested loops
-
 ## Break and continue statements
 
 - break - immediately terminates the loop
+- continue - skips whatever is after it and continues with the next iteration
+    - mostly used after a conditional statement
 
 ::: {.notes}
 _ _ _ _ _ _ _
 - a break statement that immediately terminates a while or for loop when executed within its body
-- 
+- a continue statement - skips the rest of the statements in the current iteration of the loop and it returns control to the beginning of the loop
 :::
 
-
-## List comprehension
-
-## Compare different functions
 
 # While loops
 
