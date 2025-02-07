@@ -94,7 +94,7 @@ _ _ _ _ _ _ _
 
 # Short interlude
 
-::: {style="font-size: 70%;"}
+::: {style="font-size: 70%;"} :::
 
 ::: {.fragment .nonincremental}
 - Whole numbers: Integers `int`
