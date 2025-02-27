@@ -27,15 +27,15 @@ jobs:
           tinytex: true
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Render Quarto pdf course_day_3.qmd
+      - name: Render Quarto pdf course_day_4.qmd
         uses: quarto-dev/quarto-actions/render@v2
         with:
-          path: course_day_3.qmd
+          path: course_day_4.qmd
           to: pdf
-      - name: Render Quarto html course_day_3
+      - name: Render Quarto html course_day_4
         uses: quarto-dev/quarto-actions/render@v2
         with:
-          path: course_day_3.qmd
+          path: course_day_4.qmd
           to: revealjs
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:

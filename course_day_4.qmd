@@ -1,0 +1,184 @@
+---
+title: "Introduction to Python\nDay 4"
+author: "Verjinia Metodieva and Daniel Parthier"
+date: 2025-03-04
+format:
+    revealjs:
+        incremental: true 
+        highlight-style: oblivion
+        theme: night
+        drop:
+            engine: pyodide
+        mermaid: 
+          theme: dark
+        margin: 0.01
+        embed-resources: true
+    pdf:
+        mermaid: 
+          theme: neutral
+        highlight-style: github
+execute:
+    eval: true
+    echo: true
+ipynb-shell-interactivity: all
+revealjs-plugins:
+  - drop
+---
+
+# NumPy
+
+:::: {.columns}
+::: {.column width="70%"}
+
+- Python library numerical data
+- very fast (*C/C++*)
+- good short cut for a lot of things
+- will be your best friend!
+
+:::
+
+::: {.column width="30%"}
+
+<object type="image/svg+xml" data="/img/numpy_logo.svg" width="100%"> </object>
+
+:::
+::::
+
+# NumPy Structures
+
+- similar to what we know already
+
+
+
+## Basic
+
+
+- Different data types (`dtype`) are valid
+
+- `type` followed by `bit` (8, 16, 32, 64, 128)
+
+    1. float64
+    2. int64
+    3. complex64
+    4. bool_
+    5. str_
+    6. object_
+    7. datetime64
+
+## Array
+
+- 1D, 2D and nD
+- different ways to make them
+- have shape properties
+
+## Array
+
+- Convert an existing list to an array
+
+::: {.fragment}
+``` {python}
+import numpy as np
+
+list_input = [1,2,3]
+new_array = np.array(list_input)
+new_array
+```
+:::
+
+- Can also be reversed with *method*
+
+::: {.fragment}
+``` {python}
+new_array.tolist()
+```
+:::
+
+## Make filled Arrays
+
+- Array with zeros
+
+::: {.fragment}
+``` {python}
+np.zeros(5)
+```
+:::
+
+- Arrays with ones
+
+::: {.fragment}
+``` {python}
+np.ones(5)
+```
+:::
+
+- Arrays filled with what you want
+
+::: {.fragment}
+``` {python}
+np.full(5, "hello")
+```
+:::
+
+
+- Use the size/shape of another array
+
+::: {.fragment}
+``` {python}
+old_array = np.array([1,2,3,4])
+np.zeros_like(old_array)
+```
+:::
+
+
+## n-dimensional Arrays
+
+- Every initation of Arrays can be multidimensional
+
+
+:::: {.columns}
+::: {.column width="50%"}
+
+::: {.fragment}
+2D
+``` {python}
+np.ones((3,5))
+```
+:::
+
+:::
+
+::: {.column width="50%"}
+
+::: {.fragment}
+3D
+``` {python}
+np.ones((3,3,2))
+```
+:::
+
+:::
+::::
+
+## Special cases for Arrays
+
+- Arrays can also be "empty"
+
+::: {.fragment}
+``` {python}
+np.empty(10)
+```
+:::
+
+::: {.fragment .nonincremental}
+- Only useful in very specific cases (otherwise danger zone)
+
+![](https://media1.tenor.com/m/I6GFaw6IR3YAAAAC/chuckles-im-in-danger.gif)
+:::
+
+## Array Sequences
+
+
+## Indexing
+
+
+## Operations
