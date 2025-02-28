@@ -31,9 +31,10 @@ revealjs-plugins:
 ::: {.column width="70%"}
 
 - Python library numerical data
-- very fast (*C/C++*)
-- good short cut for a lot of things
-- will be your best friend!
+- Very fast (*C/C++* and multithreaded)
+- Vectorized (substitutes `for`-loops)
+- Good short cut for a lot of things
+- Will be your best friend!
 
 :::
 
@@ -65,11 +66,26 @@ revealjs-plugins:
     6. object_
     7. datetime64
 
+## Matrix
+
+- Matrix for matrix calculations
+
+::: {.fragment}
+``` {python}
+import numpy as np
+new_matrix = np.matrix([[1,2,3],[4,5,6]])
+new_matrix
+```
+:::
+
+
+
 ## Array
 
 - 1D, 2D and nD
-- different ways to make them
-- have shape properties
+    - Matrices are a kind of array with special functions
+- Different ways to make them
+- Have shape properties
 
 ## Array
 
@@ -77,8 +93,6 @@ revealjs-plugins:
 
 ::: {.fragment}
 ``` {python}
-import numpy as np
-
 list_input = [1,2,3]
 new_array = np.array(list_input)
 new_array
@@ -119,6 +133,7 @@ np.full(5, "hello")
 ```
 :::
 
+## Array initiation short-cut
 
 - Use the size/shape of another array
 
@@ -177,8 +192,147 @@ np.empty(10)
 
 ## Array Sequences
 
+- Generate sequences
+
+::: {.fragment}
+``` {python}
+np.arange(start=2, stop=10, step=2)
+```
+:::
+
+- Similar logic to iterators from day 1 (`2:10:2`)
+- Array can also go in steps of floats e.g. `0.2`
+
+## Array Sequences
+
+- Alternative `linspace` and `logspace`
+
+::: {.fragment}
+``` {python}
+np.linspace(start=2, stop=10, num=6)
+np.logspace(start=2, stop=10, num=6)
+```
+:::
+
+
+## Array with random numbers
+
+- Callback: `spike_simulation`
+- Generate random numbers as arrays
+
+::: {.fragment}
+``` {python}
+np.random.seed(42)
+np.random.normal(5, 2, 10)
+```
+:::
+
 
 ## Indexing
 
+<!-- Possible points:
+nonzero()
+where()
+diag()
+select()
+ -->
+
+## Special Indices
+
+- Recall finding the maximum
+
+::: {.fragment}
+``` {python}
+
+# looping through data indices. find the max
+B = [1, 4, 6, 7, 89, 54]
+big_indx = 0
+for i in range(len(B)):
+    if B[i] > B[big_indx]:
+        big_indx = i
+print('The max value in B is', B[big_indx], 'found on position', big_indx)
+```
+:::
+
+::: {.fragment}
+``` {python}
+
+# looping through data indices. find the max
+B = [1, 4, 6, 7, 89, 54]
+big_indx = np.argmax(B)
+print('The max value in B is', B[big_indx], 'found on position', big_indx)
+```
+:::
+
+::: {.notes}
+`for` loops can be often replaced using functions and make your code faster and easier to read. As you can see from the example we can also use a list as function input. Numpy will convert the list automatically, work with an array and return an array too.
+:::
 
 ## Operations
+
+- Lots of useful functions:
+    - Mathematical functions
+    - Linear algebra
+    - Sorting and Counting
+    - Statistics
+    - Random number generation
+    - Input/Output (I/O)
+    - Memory mapping (mmap)
+
+## Mathematical function
+
+- Vectorized functions
+- Versions which handle `nan`
+
+::: {.fragment}
+``` {python}
+power = np.array([312, 271, 912, 851, 239, 715, np.nan])
+np.sqrt(power)
+```
+:::
+
+::: {.fragment}
+``` {python}
+np.sum(power)
+np.nansum(power)
+```
+:::
+
+
+## Statistics
+
+## Putting things together
+
+What could this be?
+
+$sin(250 x) \frac{1}{\sqrt{2\pi\sigma^2}} e^{-\frac{(x - \mu)^2}{2\sigma^2}}$
+
+::: {.fragment}
+``` {python}
+#| eval: false
+import matplotlib.pyplot as plt
+time = np.linspace(start=0, stop=0.5, num=2000)
+mu, sigma = 0.25, 0.01
+sinewave = np.sin(time * 250 * np.pi)
+gaussian = (1 / (np.sqrt(2 * np.pi * np.square(sigma))) * 
+            np.exp(-(np.square(time - mu) /np.square(2 * sigma))))
+
+plt.plot(time, gaussian * sinewave)
+plt.show()
+```
+:::
+
+::: {.fragment}
+``` {python}
+#| echo: false
+import matplotlib.pyplot as plt
+time = np.linspace(start=0, stop=0.5, num=2000)
+mu, sigma = 0.25, 0.01
+sinewave = np.sin(time * 250 * np.pi)
+gaussian = (1 / (np.sqrt(2 * np.pi * np.square(sigma))) *
+            np.exp(-(np.square(time - mu) /np.square(2 * sigma))))
+
+plt.plot(time, gaussian * sinewave)
+plt.show()
+```
+:::
