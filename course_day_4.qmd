@@ -301,6 +301,38 @@ np.nansum(power)
 
 ## Statistics
 
+- Get some summary statistics
+
+::: {.fragment}
+``` {python}
+power = np.array([313, 271, 912, 851, 239, 715])
+np.mean(power)
+np.median(power)
+np.std(power)
+```
+:::
+
+## Functions in 2D
+
+- Apply functions to different dimensions (axes)
+
+::: {.fragment}
+``` {python}
+power = np.array([[313, 271, 912, 851, 239, 715],
+                [469, 137, 312, 253, 532, 416],
+                [517, 246, 111, 321, 651, 219]])
+np.mean(power, axis=0)
+np.mean(power, axis=1)
+```
+:::
+
+::: {.fragment}
+``` {python}
+np.std(power, axis=0)
+np.std(power, axis=1)
+```
+:::
+
 ## Putting things together
 
 What could this be?
