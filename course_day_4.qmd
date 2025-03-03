@@ -66,7 +66,7 @@ revealjs-plugins:
     6. object_
     7. datetime64
 
-## Matrix
+<!-- ## Matrix
 
 - Matrix for matrix calculations
 
@@ -76,7 +76,7 @@ import numpy as np
 new_matrix = np.matrix([[1,2,3],[4,5,6]])
 new_matrix
 ```
-:::
+::: -->
 
 
 
@@ -87,27 +87,8 @@ new_matrix
 - Different ways to make them
 - Have shape properties
 
-## Array
 
-- Convert an existing list to an array
-
-::: {.fragment}
-``` {python}
-list_input = [1,2,3]
-new_array = np.array(list_input)
-new_array
-```
-:::
-
-- Can also be reversed with *method*
-
-::: {.fragment}
-``` {python}
-new_array.tolist()
-```
-:::
-
-## Make filled Arrays
+## Make filled arrays
 
 - Array with zeros
 
@@ -125,11 +106,40 @@ np.ones(5)
 ```
 :::
 
+
+- Arrays filled with random numbers
+
+::: {.fragment}
+``` {python}
+np.random.rand(5)
+```
+:::
+
 - Arrays filled with what you want
 
 ::: {.fragment}
 ``` {python}
 np.full(5, "hello")
+```
+:::
+
+## Array from lists
+
+- Convert an existing list to an array
+
+::: {.fragment}
+``` {python}
+list_input = [1,2,3]
+new_array = np.array(list_input)
+new_array
+```
+:::
+
+- Can also be reversed to a list with *method*
+
+::: {.fragment}
+``` {python}
+new_array.tolist()
 ```
 :::
 
@@ -145,7 +155,7 @@ np.zeros_like(old_array)
 :::
 
 
-## n-dimensional Arrays
+## n-dimensional arrays
 
 - Every initation of Arrays can be multidimensional
 
@@ -156,7 +166,15 @@ np.zeros_like(old_array)
 ::: {.fragment}
 2D
 ``` {python}
-np.ones((3,5))
+A = np.ones((3,5))
+```
+:::
+
+::: {.fragment}
+2D
+``` {python}
+# check the arrays's shape
+np.shape(A)
 ```
 :::
 
@@ -174,7 +192,31 @@ np.ones((3,3,2))
 :::
 ::::
 
-## Special cases for Arrays
+## Array with random numbers
+
+- Callback: `spike_simulation`
+- Generate random numbers as arrays
+
+::: {.fragment}
+``` {python}
+np.random.seed(42)
+np.random.normal(5, 2, 20)
+```
+:::
+
+
+## Changing the shapes of arrays
+::: {.fragment}
+``` {python}
+np.random.seed(42)
+A  = np.random.normal(5, 2, 20)
+A = A.reshape(2, 5, 2)
+print(A)
+print(np.shape(A))
+```
+:::
+
+## Special cases for arrays
 
 - Arrays can also be "empty"
 
@@ -190,7 +232,7 @@ np.empty(10)
 ![](https://media1.tenor.com/m/I6GFaw6IR3YAAAAC/chuckles-im-in-danger.gif)
 :::
 
-## Array Sequences
+## Array sequences
 
 - Generate sequences
 
@@ -203,9 +245,10 @@ np.arange(start=2, stop=10, step=2)
 - Similar logic to iterators from day 1 (`2:10:2`)
 - Array can also go in steps of floats e.g. `0.2`
 
-## Array Sequences
+## Array sequences
 
 - Alternative `linspace` and `logspace`
+- specifying the number of elements we want to have
 
 ::: {.fragment}
 ``` {python}
@@ -214,28 +257,13 @@ np.logspace(start=2, stop=10, num=6)
 ```
 :::
 
-
-## Array with random numbers
-
-- Callback: `spike_simulation`
-- Generate random numbers as arrays
-
-::: {.fragment}
-``` {python}
-np.random.seed(42)
-np.random.normal(5, 2, 10)
-```
-:::
-
+# Exercise time
 
 ## Indexing
 
-<!-- Possible points:
-nonzero()
-where()
-diag()
-select()
- -->
+- nonzero()
+- where()
+- diag()
 
 ## Special Indices
 
@@ -368,3 +396,7 @@ plt.plot(time, gaussian * sinewave)
 plt.show()
 ```
 :::
+
+### Image for the homework
+
+<object type="image/svg+xml" data="/img/patterns.png" width="100%"> </object>
