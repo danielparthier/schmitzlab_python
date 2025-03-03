@@ -229,7 +229,10 @@ np.empty(10)
 ::: {.fragment .nonincremental}
 - Only useful in very specific cases (otherwise danger zone)
 
+::: {.content-visible when-format="html"}
 ![](https://media1.tenor.com/m/I6GFaw6IR3YAAAAC/chuckles-im-in-danger.gif)
+:::
+
 :::
 
 ## Array sequences
