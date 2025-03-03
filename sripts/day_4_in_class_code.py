@@ -8,6 +8,10 @@ array_2d = np.zeros((10, 10))
 array_3d = np.zeros((10, 10, 10))
 
 
+# go over some examples with creation of numpy arrays fro list. Play with the dimensions
+# np.reshape()
+
+
 # linspace and logspace in 1D and nD
 linear_space = np.linspace(start=1, stop=10, num=20)
 
