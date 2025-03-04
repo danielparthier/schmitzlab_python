@@ -167,6 +167,7 @@ np.zeros_like(old_array)
 2D
 ``` {python}
 A = np.ones((3,5))
+A
 ```
 :::
 
