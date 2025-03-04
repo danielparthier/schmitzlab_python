@@ -40,7 +40,7 @@ revealjs-plugins:
 
 ::: {.column width="30%"}
 
-<object type="image/svg+xml" data="/img/numpy_logo.svg" width="100%"> </object>
+![](/img/numpy_logo.svg)
 
 :::
 ::::
@@ -400,6 +400,8 @@ plt.show()
 ```
 :::
 
+***
+
 ### Image for the homework
 
-<object type="image/svg+xml" data="/img/patterns.png" width="100%"> </object>
+![](/img/patterns.png)
