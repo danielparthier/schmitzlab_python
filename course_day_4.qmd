@@ -40,7 +40,7 @@ revealjs-plugins:
 
 ::: {.column width="30%"}
 
-<object type="image/svg+xml" data="/img/numpy_logo.svg" width="100%"> </object>
+![](/img/numpy_logo.svg)
 
 :::
 ::::
@@ -167,6 +167,7 @@ np.zeros_like(old_array)
 2D
 ``` {python}
 A = np.ones((3,5))
+A
 ```
 :::
 
@@ -400,6 +401,8 @@ plt.show()
 ```
 :::
 
+***
+
 ### Image for the homework
 
-<object type="image/svg+xml" data="/img/patterns.png" width="100%"> </object>
+![](/img/patterns.png)
