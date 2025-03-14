@@ -1,0 +1,45 @@
+---
+title: "Introduction to Python\nDay 5"
+author: "Verjinia Metodieva and Daniel Parthier"
+date: 2025-03-18
+format:
+    revealjs:
+        incremental: true 
+        highlight-style: oblivion
+        theme: night
+        drop:
+            engine: pyodide
+        mermaid: 
+          theme: dark
+        margin: 0.01
+        embed-resources: true
+    pdf:
+        mermaid: 
+          theme: neutral
+        highlight-style: github
+execute:
+    eval: true
+    echo: true
+ipynb-shell-interactivity: all
+revealjs-plugins:
+  - drop
+---
+
+# SciPy
+
+:::: {.columns}
+::: {.column width="70%"}
+
+- A python library for scientific questions
+- NumPy in the background
+- Many useful functions for signals (filtering, finding peaks, FFT, deconvolution)
+- Some statistical tests (t-test, wilcoxon, correlation, etc.)
+
+:::
+
+::: {.column width="30%"}
+
+![](/img/scipy_logo.svg)
+
+:::
+::::
