@@ -90,6 +90,14 @@ print(peak_location)
 
 ## Detect peaks
 
+```{python}
+plt.plot(time_s, data['D1'][10])
+plt.plot(time_s[peak_location], data['D1'][10][peak_location], '.')
+plt.show()
+```
+
+## Detect peaks
+
 - Peak properties:
     - Peak height, widths, prominences, thresholds
     - Depends on function input
