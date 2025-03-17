@@ -1,0 +1,248 @@
+---
+title: "Introduction to Python\nDay 5"
+author: "Verjinia Metodieva and Daniel Parthier"
+date: 2025-03-18
+format:
+    revealjs:
+        incremental: true 
+        highlight-style: oblivion
+        theme: night
+        drop:
+            engine: pyodide
+        mermaid: 
+          theme: dark
+        margin: 0.01
+        embed-resources: true
+    pdf:
+        mermaid: 
+          theme: neutral
+        highlight-style: github
+execute:
+    eval: true
+    echo: true
+ipynb-shell-interactivity: all
+revealjs-plugins:
+  - drop
+---
+
+# SciPy
+
+:::: {.columns}
+::: {.column width="70%"}
+
+- A python library for scientific questions
+- NumPy in the background
+- Many useful functions for signals (filtering, finding peaks, FFT, deconvolution)
+- Some statistical tests (t-test, wilcoxon, correlation, etc.)
+
+:::
+
+::: {.column width="30%"}
+
+![](/img/scipy_logo.svg)
+
+:::
+::::
+
+## Signal processing
+
+- Module `signal`
+- Important part of analysis
+- Getting information of interest
+
+## Detect peaks
+
+- Function to detect peaks in data: `find_peaks`
+- You can specify criteria
+    - Width (minimum, maximum)
+    - Distance to next peak
+    - Threshold
+    - etc.
+
+## Detect peaks
+
+```{python}
+import json
+import numpy as np
+import matplotlib.pyplot as plt
+
+sampling_rate = 2e4
+with open('data/charact_data.json') as f:
+    data = json.load(f)
+# print the keys
+data = {key: np.array(data[key]) for key in data.keys()}
+time_s = np.linspace(0, data['D1'].shape[1]/sampling_rate, data['D1'].shape[1])
+```
+
+## Detect peaks
+```{python}
+plt.plot(time_s, data['D1'][10])
+plt.show()
+```
+
+## Detect peaks
+
+```{python}
+from scipy import signal
+peak_location, peak_properties = signal.find_peaks(data['D1'][10], height=0, width=[10, 50], distance=10)
+print(peak_location)
+```
+
+## Detect peaks
+
+- Peak properties:
+    - Peak height, widths, prominences, thresholds
+    - Depends on function input
+    - More details in [documentation](https://docs.scipy.org/doc/scipy/reference/generated/scipy.signal.find_peaks.html#find-peaks)
+
+## Practice
+
+- Find the peaks of all traces
+- Append the location and heigth to separate lists
+- Plot the number of spikes against the current
+    - `[-300, -200, -150, -100, -50, 0, 50, 100, 150, 200, 250, 300]`
+- Think of a good way to make use of functions
+
+
+## Fit data
+
+- Modul `optimize`
+- Different functions to fit lines/functions
+- `curve_fit` allows to specify a function which is fit to data
+
+## Specify a function
+
+```{python}
+def func(x, a, b, c):
+    return a * np.exp(-b * x) + c
+
+x = np.arange(0,10,1)
+y = func(x, 1,0.3,0.1)
+plt.plot(x, y, 'o')
+plt.show()
+```
+
+## Fit function
+
+```{python}
+from scipy import optimize
+popt, pcov = optimize.curve_fit(func, x, y, p0=(1,1,1))
+x_fit = np.arange(0,10,0.1)
+plt.plot(x, y, 'o')
+plt.plot(x_fit, func(x_fit, *popt))
+plt.show()
+print(popt)
+```
+
+## Convolve and Deconvolve
+
+- Signals can be distorted
+- Multiplying something to signal with `convolve`
+- Remove known distortion from signal `deconvolve`
+- Where do you see use cases?
+
+## Signal analysis (power)
+
+```{python}
+time = np.linspace(start=0, stop=0.5, num=2000)
+mu, sigma = 0.25, 0.01
+sinewave = np.sin(time * 250 * np.pi)
+gaussian = (1 / (np.sqrt(2 * np.pi * np.square(sigma))) *
+            np.exp(-(np.square(time - mu) /np.square(2 * sigma))))
+ripple = gaussian * sinewave
+```
+
+
+## Signal analysis (power)
+
+```{python}
+np.random.seed(0)
+trace = ripple + gaussian*6 + np.random.normal(0, 3, size=time.shape)
+plt.plot(time, trace)
+plt.show()
+```
+
+## Signal analysis (power)
+
+- Module `signal`
+- Power spectrum to analyse frequencies
+- e.g. `welch`
+
+## Power spectrum
+
+```{python}
+#| output-location: slide
+f, Pxx_den = signal.welch(trace, fs=1/time[1], nperseg=1024, average='median')
+plt.semilogy(f, Pxx_den)
+plt.vlines(125, Pxx_den.min(), Pxx_den.max(),color='r', linestyle='--')
+plt.xlabel('Frequency [Hz]')
+plt.ylabel('PSD [V**2/Hz]')
+plt.title('Power Spectral Density')
+plt.show()  
+```
+
+- Returns frequencies `f` and power densities `Pxx_den`
+
+## Filtering data
+
+- Filtering data is used to remove different components from signal
+- lowpass, highpass, bandpass
+- different types of filters (Butterworth, Chebyshev, FIR, etc.)
+
+## Filter construction
+
+- Need different parts
+    - Nyquist frequency
+    - Filter frequencies (0 to 1 - freqeuncy/Nyquist)
+    - Type of filter
+    - Order ('strength')
+- Outputs are filter coefficients
+
+:::{.fragment}
+```{python}
+from scipy import signal
+sampling_rate = 1/time[1]
+nyquist = sampling_rate / 2
+b, a = signal.butter(N=5, Wn=[100/nyquist, 250/nyquist], btype='band')
+```
+:::
+
+## Filter construction
+
+``` {python}
+#| output-location: slide
+w, h = signal.freqz(b, a, fs=sampling_rate, worN=2000)
+plt.plot(w, abs(h))
+plt.title('Filter frequency response')
+plt.xlabel('Frequency [Hz]')
+plt.ylabel('Gain')
+plt.grid()
+plt.axvline(100, color='r', linestyle='--')
+plt.axvline(250, color='r', linestyle='--')
+plt.show()
+```
+
+## Apply filter
+
+- Different ways of filtering (IIR/FIR)
+- one way or two ways (filtfilt)
+
+:::{.fragment}
+``` {python}
+ripple_filtered_trace = signal.filtfilt(b, a, trace)
+plt.plot(time, ripple_filtered_trace)
+plt.plot(time, ripple, '--')
+plt.show()
+```
+:::
+
+## Filter for lowpass
+
+``` {python}
+b, a = signal.butter(5, 80/nyquist, btype='low')
+lowpass_filtered_trace = signal.filtfilt(b, a, trace)
+plt.plot(time, trace)
+plt.plot(time, lowpass_filtered_trace, '--')
+plt.show()
+```
+
