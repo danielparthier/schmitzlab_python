@@ -106,7 +106,7 @@ plt.show()
 ## Practice
 
 - Find the peaks of all traces
-- Append the location and heigth to separate lists
+- Append the location and height to separate lists
 - Plot the number of spikes against the current
     - `[-300, -200, -150, -100, -50, 0, 50, 100, 150, 200, 250, 300]`
 - Think of a good way to make use of functions
@@ -201,7 +201,7 @@ plt.show()
 
 - Need different parts
     - Nyquist frequency
-    - Filter frequencies (0 to 1 - freqeuncy/Nyquist)
+    - Filter frequencies (0 to 1 - frequency/Nyquist)
     - Type of filter
     - Order ('strength')
 - Outputs are filter coefficients
