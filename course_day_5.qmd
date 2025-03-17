@@ -100,7 +100,7 @@ print(peak_location)
 - Find the peaks of all traces
 - Append the location and heigth to separate lists
 - Plot the number of spikes against the current
-    - from -300 to 300 in steps of 50 pA
+    - `[-300, -200, -150, -100, -50, 0, 50, 100, 150, 200, 250, 300]`
 - Think of a good way to make use of functions
 
 
@@ -133,6 +133,12 @@ plt.plot(x_fit, func(x_fit, *popt))
 plt.show()
 print(popt)
 ```
+
+## Convolve and Deconvolve
+
+- Signals can be distorted
+- Multiplying something to signal with `convolve`
+- Remove known distortion from signal `deconvolve`
 
 ## Signal analysis (power)
 
@@ -228,4 +234,14 @@ plt.plot(time, ripple, '--')
 plt.show()
 ```
 :::
+
+## Filter for lowpass
+
+``` {python}
+b, a = signal.butter(5, 80/nyquist, btype='low')
+lowpass_filtered_trace = signal.filtfilt(b, a, trace)
+plt.plot(time, trace)
+plt.plot(time, lowpass_filtered_trace, '--')
+plt.show()
+```
 
