@@ -139,6 +139,7 @@ print(popt)
 - Signals can be distorted
 - Multiplying something to signal with `convolve`
 - Remove known distortion from signal `deconvolve`
+- Where do you see use cases?
 
 ## Signal analysis (power)
 
