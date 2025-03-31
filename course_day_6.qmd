@@ -1,0 +1,35 @@
+---
+title: "Introduction to Python\nDay 6"
+author: "Verjinia Metodieva and Daniel Parthier"
+date: 2025-04-01
+format:
+    revealjs:
+        incremental: true 
+        highlight-style: oblivion
+        theme: night
+        drop:
+            engine: pyodide
+        mermaid: 
+          theme: dark
+        margin: 0.01
+        embed-resources: true
+    pdf:
+        mermaid: 
+          theme: neutral
+        highlight-style: github
+execute:
+    eval: true
+    echo: true
+ipynb-shell-interactivity: all
+revealjs-plugins:
+  - drop
+---
+
+# Matplotlib
+- library for visualization with Python
+- usually imported as 
+
+
+
+other plotting libraries: 
+
