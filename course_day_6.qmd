@@ -25,11 +25,78 @@ revealjs-plugins:
   - drop
 ---
 
-# Matplotlib
+" Visualization is a method of computing. It transforms the symbolic into the geometric,
+enabling researchers to observe their simulations and computations. Visualization
+offers a method for seeing the unseen. It enriches the process of scientific discovery
+and fosters profound and unexpected insights. In many fields it is already
+revolutionizing the way scientists do science.
+
+<small> ~ McCormick, B.H., T.A. DeFanti, M.D. Brown, Visualization in Scientific
+Computing, Computer Graphics Vol. 21.6, November 1987 </small>
+
+- 
+
+"Sometimes the most effective way to describe, explore, and summarize a set of numbers 
+- even a very large set - is to look at those numbers" 
+
+<small> ~ The Visual Display of Quantitative Information, Edwrd Tufte, 1983 </small>
+
+##
+![](/img/10_rules_figures.png)
+
+- audience, message, caption, choice of viz, no misleading plotting
+
+## Matplotlib
+
 - library for visualization with Python
-- usually imported as 
+
+:::{.fragment}
+```{python}
+import matplotlib.pyplot as plt
+```
+
+:::
+
+- other plotting libraries: Seaborn, Plotly, Bokeh, Altair
+
+## Anatomy of a figure
+[ Find the complete cheatsheet on GitHub in the 'img/' folder]
+
+::: {.column width="43%"}
+
+![](/img/anatomy_of_a_fig.png)
+
+:::
+
+::: {.column width="57%"}
+
+mapping data info into visual info
+
+- necessary: data (y-axis elements)
+
+- x-axis elements
+- type of plot: scatter plot, line plot, histogram, bargraph, violin plot, etc.
+- shape, size, and color specification
+- axis ticks and labels
+- legend
+- title
+
+:::
+
+## Interfaces/ Styles of Use
+- implicit pyplot interface 
+  - example: plt.xlabel
+  - methods are generally applied to the current axes or figure
+
+- **object-oriented interface** 
+  - example: (ax.set_xlabel)
+  - uses methods on a figure or axes object to create other artists, and 
+  - allows to build a visualization step by step
 
 
+### Useful links
 
-other plotting libraries: 
-
+https://datavizcatalogue.com/index.html 
+https://matplotlib.org/stable/gallery/index.html
+https://matplotlib.org/cheatsheets/
+https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1003833
