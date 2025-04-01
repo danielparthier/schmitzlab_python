@@ -25,7 +25,7 @@ revealjs-plugins:
   - drop
 ---
 
-" Visualization is a method of computing. It transforms the symbolic into the geometric,
+"Visualization is a method of computing. It transforms the symbolic into the geometric,
 enabling researchers to observe their simulations and computations. Visualization
 offers a method for seeing the unseen. It enriches the process of scientific discovery
 and fosters profound and unexpected insights. In many fields it is already
@@ -39,7 +39,7 @@ Computing, Computer Graphics Vol. 21.6, November 1987 </small>
 "Sometimes the most effective way to describe, explore, and summarize a set of numbers 
 - even a very large set - is to look at those numbers" 
 
-<small> ~ The Visual Display of Quantitative Information, Edwrd Tufte, 1983 </small>
+<small> ~ The Visual Display of Quantitative Information, Edward Tufte, 1983 </small>
 
 ##
 ![](/img/10_rules_figures.png)
@@ -182,8 +182,8 @@ plt.show()
 ## Filtering data
 
 - Filtering data is used to remove different components from signal
-- lowpass, highpass, bandpass
-- different types of filters (Butterworth, Chebyshev, FIR, etc.)
+- Lowpass, highpass, bandpass
+- Different types of filters (Butterworth, Chebyshev, FIR, etc.)
 
 ## Filter construction
 
@@ -220,7 +220,7 @@ plt.show()
 ## Apply filter
 
 - Different ways of filtering (IIR/FIR)
-- one way or two ways (filtfilt)
+- One way or two ways (filtfilt)
 
 :::{.fragment}
 ``` {python}
