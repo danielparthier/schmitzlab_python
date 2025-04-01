@@ -94,7 +94,7 @@ mapping data info into visual info
   - allows to build a visualization step by step
 
 
-### Useful links
+## Useful links
 
 https://datavizcatalogue.com/index.html 
 https://matplotlib.org/stable/gallery/index.html
