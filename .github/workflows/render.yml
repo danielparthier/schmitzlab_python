@@ -35,12 +35,12 @@ jobs:
       - name: Render Quarto pdf course_day_5.qmd
         uses: quarto-dev/quarto-actions/render@v2
         with:
-          path: course_day_5.qmd
+          path: course_day_6.qmd
           to: pdf
-      - name: Render Quarto html course_day_5
+      - name: Render Quarto html course_day_6
         uses: quarto-dev/quarto-actions/render@v2
         with:
-          path: course_day_5.qmd
+          path: course_day_6_qmd
           to: revealjs
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
