@@ -1,0 +1,186 @@
+---
+title: "Introduction to Python\nDay 7"
+author: "Verjinia Metodieva and Daniel Parthier"
+date: 2025-04-01
+format:
+    revealjs:
+        incremental: true 
+        highlight-style: oblivion
+        theme: night
+        drop:
+            engine: pyodide
+        mermaid: 
+          theme: dark
+        margin: 0.01
+        embed-resources: true
+    pdf:
+        mermaid: 
+          theme: neutral
+        highlight-style: github
+execute:
+    eval: true
+    echo: true
+ipynb-shell-interactivity: all
+revealjs-plugins:
+  - drop
+---
+
+## Classes
+
+```{python}
+#| echo: false
+#| message: false
+#| eval: true
+# load necessary libraries
+import numpy as np
+import matplotlib.pyplot as plt
+
+```
+
+- Classes are objects
+- Can combine data and functions
+- Can create complex data structures
+- Helps you to organise your code and data
+
+## Where are they useful?
+
+- You want to combine different structures
+- You need to add information to your data
+- You want to use/reuse specific functions with your data
+
+## General structure
+
+```python
+class ClassName:
+    def __init__(self, parameters):
+        # Constructor
+        self.attribute = parameters
+
+    def method(self, parameters):
+        # Method
+        return self.attribute + parameters
+```
+
+::: {style="font-size: 60%;"}
+- `ClassName` is the name of the class
+- `__init__` is the constructor
+- `self` is the instance of the class
+- `parameters` are the function inputs
+- `self.attribute` is the attribute of the class
+- `method` is a method of the class
+    - methods are functions that belong to the class
+- `return` is the output of the method
+:::
+
+![](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExN3RmODZmZDgxNngyYmZidXhnamowZnVkb2U3MzR2bWdldG50OXhoOCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/5nkIn9AEfUQ6JtXL43/giphy.gif){.absolute bottom=-50 right=0 width="300"}
+
+## What could a class look like?
+```{python}
+class Experiment:
+    def __init__(self, name, date):
+        self.name = name
+        self.date = date
+        self.data = []
+    
+    def add_data(self, data):
+        self.data.append(data)
+    
+    def get_data(self):
+        return self.data
+```
+
+## How to use them?
+
+```{python}
+test_experiment = Experiment("LTP", "2025-04-15")
+type(test_experiment)
+test_experiment.name
+test_experiment.date
+test_experiment.add_data([1.41, 1.38, 1.39])
+test_experiment.get_data()
+```
+
+::: {style="font-size: 75%;"}
+- Similar to what we saw before:
+    - `test_experiment` is an instance of the class `Experiment`
+    - `name` and `date` are attributes of the class (dot notation)
+    - `add_data` and `get_data` are methods of the class (dot notation)
+:::
+
+## How to use them?
+
+- We can now write functions which use the class as input
+
+```{python}
+def average_LTP(experiment: Experiment) -> float:
+    """
+    Calculate the average of the data in an Experiment object.
+    Parameters:
+    experiment (Experiment): The Experiment object containing data.
+    Returns:
+    float: The average of the data.
+    """
+    import numpy as np
+
+    if not isinstance(experiment, Experiment):
+        raise TypeError("Input must be an Experiment object.")
+    
+    return np.mean(experiment.data)
+```
+
+- Function requires the `Experiment` class as input
+- Checks if the input is of the correct type
+- Calculates the average of the data in the `Experiment` object
+
+
+::: {.notes}
+Notice we can use type hints to specify the input and output type of the function. In our case the input is an `Experiment` object and the output is a float. This is not mandatory, but it helps to understand the function better.
+You can use the import statement to import the numpy library inside the function.
+:::
+
+## What is an advantage of using a class?
+
+- We could specify sensible functions to use with the object
+- An external function could require to use multiple inputs
+  - A class can combine all the inputs into one object
+- Well defined classes can be reused for different functions
+- A lot of information can be stored in one object
+- Classes can be dynamic
+
+## Example for an event class
+
+```{python}
+time = np.linspace(start=0, stop=0.5, num=2000)
+mu, sigma = 0.25, 0.01
+sinewave = np.sin(time * 250 * np.pi)
+gaussian = (1 / (np.sqrt(2 * np.pi * np.square(sigma))) *
+            np.exp(-(np.square(time - mu) /np.square(2 * sigma))))
+ripple = gaussian * sinewave
+```
+
+- Recall from previous lessons
+
+## Example for an event class
+
+```{python}
+np.random.seed(0)
+trace = ripple + gaussian*6
+# repeat the trace 4 times
+# add noise
+trace = np.tile(trace, 4)
+trace += np.random.normal(0, 3, size=trace.shape)
+# add time to the trace
+time = np.arange(start=0, step=time[1], stop=len(trace)*time[1])
+plt.plot(time, trace)
+plt.show()
+```
+
+- We can use the `trace` and `time` to create an event class
+
+## In class coding
+
+- Create an `Event` class
+
+## Now let's make our own
+
+- Make a class!
