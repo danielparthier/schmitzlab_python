@@ -72,7 +72,9 @@ class ClassName:
 - `return` is the output of the method
 :::
 
+::: {.content-visible when-format="html"}
 ![](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExN3RmODZmZDgxNngyYmZidXhnamowZnVkb2U3MzR2bWdldG50OXhoOCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/5nkIn9AEfUQ6JtXL43/giphy.gif){.absolute bottom=-50 right=0 width="300"}
+:::
 
 ## What could a class look like?
 ```{python}
