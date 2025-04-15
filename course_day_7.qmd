@@ -48,6 +48,11 @@ import matplotlib.pyplot as plt
 - You need to add information to your data
 - You want to use/reuse specific functions with your data
 
+## Class structure and relationship
+
+![](img/KP-UML-Generalization-20060325.svg)
+
+
 ## General structure
 
 ```python
@@ -72,8 +77,21 @@ class ClassName:
 - `return` is the output of the method
 :::
 
+
+## The concept of `self`
+
+::: {style="font-size: 75%;"}
+- `self` is a reference to the current instance of the class
+- Accessing `self` with dot notation allows you access/modification of the class
+  - `self.attribute`
+- A method of a class might require to access the class itself
+  - `self` is passed as first argument to the method
+  - `self` could be also called `this`, `cls`, or any other name
+  - It is convention to use `self` in Python
+:::
+
 ::: {.content-visible when-format="html"}
-![](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExN3RmODZmZDgxNngyYmZidXhnamowZnVkb2U3MzR2bWdldG50OXhoOCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/5nkIn9AEfUQ6JtXL43/giphy.gif){.absolute bottom=-50 right=0 width="300"}
+![](https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExN3RmODZmZDgxNngyYmZidXhnamowZnVkb2U3MzR2bWdldG50OXhoOCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/5nkIn9AEfUQ6JtXL43/giphy.gif){.absolute bottom=-80 right=0 width="300"}
 :::
 
 ## What could a class look like?
