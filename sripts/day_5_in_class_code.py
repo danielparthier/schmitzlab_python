@@ -1,10 +1,10 @@
 import numpy as np
 import matplotlib.pyplot as plt
-import scipy.signal as signal
-from scipy.optimize import curve_fit
+from scipy import signal
+from scipy import optimize
 
 
-
+# Example 1 for characterisation data
 # import data from charact_data.json as dictionary
 import json
 
@@ -15,18 +15,14 @@ data = {key: np.array(data[key]) for key in data.keys()}
 plt.plot(data['D1'][10])
 plt.show()
 
-for i in data['D1']:
-    print(i.shape)
-
 time_s = np.linspace(0, data['D1'].shape[1]/20_000, data['D1'].shape[1])
-
 peak_location, peak_properties = signal.find_peaks(data['D1'][10], height=0, width=[10, 50], distance=10)
 
 plt.plot(time_s, data['D1'][10])
 plt.plot(time_s[peak_location], peak_properties['peak_heights'], '.')
 plt.show()
 
-def find_peaks(data, height=0, width=[10, 50], distance=10):
+def find_all_peaks(data, height=0, width=[10, 50], distance=10):
     peaks = []
     for i in range(data.shape[0]):
         peak_location, peak_properties = signal.find_peaks(data[i], height=height, width=width, distance=distance)
@@ -34,13 +30,13 @@ def find_peaks(data, height=0, width=[10, 50], distance=10):
     return peaks
 
 # find the peaks in the data
-peaks = find_peaks(data['D1'], height=0, width=[10, 50], distance=10)
+peaks = find_all_peaks(data['D1'], height=0, width=[10, 50], distance=10)
 peak_count = [len(peak) for peak in peaks]
 current_inj = [-300, -200, -150, -100, -50, 0, 50, 100, 150, 200, 250, 300]
 
-for i in range(len(peaks)):
-    plt.plot(data['D1'][i])
-    plt.plot(peaks[i], data['D1'][i][peaks[i]], '.')
+for index, peak in enumerate(peaks):
+    plt.plot(data['D1'][index])
+    plt.plot(peak, data['D1'][index][peak], '.')
 plt.show()
 
 plt.plot(current_inj, peak_count, '.')
@@ -49,6 +45,37 @@ plt.ylabel('Number of Spikes')
 plt.title('Number of Spikes vs Current Injection')
 plt.show()
 
+# AP extraction - Bonus
+# extract the APs from the data with -10 data points and +40 data points
+# around the peak
+AP_extracted = []
+AP_extracted_diff = []
+
+plt.plot(data['D1'][8][peaks[8][0]-20:peaks[8][0]+40])
+plt.show()
+
+
+for index, peak in enumerate(peaks):
+    peak_array = np.full((len(peak), 60), np.nan)
+    for p_index, p in enumerate(peak):
+        peak_array[p_index] = data['D1'][index][p-20:p+40]
+    AP_extracted_diff = np.diff(peak_array, append=np.nan)
+    AP_extracted.append(peak_array)
+
+plt.plot(np.diff(AP_extracted[8], append=np.nan).T)
+plt.show()
+
+# plot the APs
+plt.plot(AP_extracted[8].T, AP_extracted_diff[8].T)
+plt.show()
+
+
+plt.plot(data['D1'][index])
+plt.plot(peak, data['D1'][index][peak], '.')
+plt.title(f'APs for current injection {current_inj[index]}')
+plt.xlabel('Time (ms)')
+plt.ylabel('Voltage (mV)')
+plt.show()
 
 # Example 2 for sensor data
 # load the data from csv
@@ -77,7 +104,7 @@ def bleach_correction(traces, plot=False):
     for sweep in range(traces.shape[1]):
         ydata = traces[:,sweep].flatten()
         xdata = np.arange(0, len(ydata))
-        popt, pcov = curve_fit(func, xdata[60:], ydata[60:],
+        popt, pcov = optimize.curve_fit(func, xdata[60:], ydata[60:],
                                p0=(ydata.min()-(ydata.max()-ydata.min()),
                                    .001, ydata.max()-ydata.min()))
         corrected_traces[:,sweep] = ydata - func(xdata, *popt)

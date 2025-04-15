@@ -23,18 +23,20 @@ plt.show()
 
 
 class Event:
-    def __init__(self, time, trace, threshold=100):
+    def __init__(self, time: np.ndarray, trace: np.ndarray, threshold: float=100) -> None:
         from scipy.signal import find_peaks
         self.time = time
         self.trace = trace
-        self.event = None
         self.sampling_rate = 1 / (time[1] - time[0])
+        self.threshold = threshold
+        self.event_trace = None
+        self.ripple = None
         print('Sampling rate: ', self.sampling_rate)
-        event_index = find_peaks(self.trace, height=threshold, distance=100)[0]
+        event_index = find_peaks(self.trace, height=self.threshold, distance=100)[0]
         print('Event index: ', event_index)
         if len(event_index) == 0:
             raise ValueError('No events detected')
-        self.event_time = time[event_index]
+        self.event_time = self.time[event_index]
         # make an array with zeros
         self.event_trace = np.zeros((len(event_index), 900))
         for i, index in enumerate(event_index):
@@ -46,7 +48,8 @@ class Event:
     def plot_events(self, show=True):
         import matplotlib.pyplot as plt
         from numpy import arange
-        plt.plot(arange(start=0, stop=self.event_trace.shape[1]/self.sampling_rate, step=1/self.sampling_rate), self.event_trace.T)
+        plt.plot(arange(start=0, stop=self.event_trace.shape[1]/self.sampling_rate,
+                        step=1/self.sampling_rate), self.event_trace.T)
         plt.xlabel('Time (s)')
         plt.ylabel('Amplitude')
         plt.title('Events')
@@ -65,7 +68,8 @@ class Event:
     def plot_ripple(self, show=True):
         import matplotlib.pyplot as plt
         from numpy import arange
-        plt.plot(arange(start=0, stop=self.event_trace.shape[1]/self.sampling_rate, step=1/self.sampling_rate), self.ripple.T)
+        plt.plot(arange(start=0, stop=self.event_trace.shape[1]/self.sampling_rate,
+                        step=1/self.sampling_rate), self.ripple.T)
         plt.xlabel('Time (s)')
         plt.ylabel('Amplitude')
         plt.title('Ripple')
@@ -81,4 +85,4 @@ event_list = []
 for i in range(len(detected_events.event_time)):
     event_list.append(Event(time, trace, threshold=100))
 
-event_list[0].trace
+event_list[0].event_time
